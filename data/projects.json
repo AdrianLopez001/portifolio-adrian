@@ -7,7 +7,7 @@
       "shortDescription": "Motor de busca semântica corporativa com RAG e embeddings em Java.",
       "language": "Java",
       "languageColor": "#b07219",
-      "demoUrl": "https://frontend-bd7j3o6me-fortessdunes.vercel.app",
+      "demoUrl": "https://corporate-rag-engine-fortessdunes.vercel.app",
       "githubUrl": "https://github.com/AdrianLopez001/Corporate-RAG-Engine",
       "problem": "Empresas acumulam gigabytes de documentos internos (PDFs, relatórios, manuais) que se tornam inacessíveis. Funcionários perdem horas buscando informação que já existe, e a tomada de decisão é prejudicada pela ausência de contexto.",
       "contribution": "Construí o backend de RAG (Retrieval-Augmented Generation) de nível corporativo utilizando o stack mais moderno de IA no Java. O pipeline inclui a extração de texto via Apache Tika, geração de embeddings contextuais, persistência em banco vetorial com indexação HNSW e pipeline de CI com testes automatizados via Mockito.",
