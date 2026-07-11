@@ -394,16 +394,14 @@ export default function AdminPage() {
                 onChange={(v) => updateConfig("avatarUrl", v)}
               />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <FileUploadField
-                  label="Currículo (PT)"
+                <Field
+                  label="Caminho/URL do Currículo (PT)"
                   value={config.cvPtUrl}
-                  accept=".pdf"
                   onChange={(v) => updateConfig("cvPtUrl", v)}
                 />
-                <FileUploadField
-                  label="Currículo (EN)"
+                <Field
+                  label="Caminho/URL do Currículo (EN)"
                   value={config.cvEnUrl}
-                  accept=".pdf"
                   onChange={(v) => updateConfig("cvEnUrl", v)}
                 />
               </div>
