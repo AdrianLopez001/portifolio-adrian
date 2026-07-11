@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { Code2, GitBranch } from "lucide-react";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
@@ -51,18 +50,6 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
 
 function ClientPageContent({ projects, config }: ClientPageProps) {
   const { t } = useI18n();
-
-  // Track unique visits (session-based, no cookies)
-  useEffect(() => {
-    if (!sessionStorage.getItem("visited")) {
-      sessionStorage.setItem("visited", "1");
-      fetch("/api/analytics", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "visit" }),
-      }).catch(() => {});
-    }
-  }, []);
 
   return (
     <div className="min-h-screen">

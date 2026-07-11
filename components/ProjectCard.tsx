@@ -36,20 +36,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
   const { t } = useI18n();
 
-  const handleToggle = async () => {
-    const next = !expanded;
-    setExpanded(next);
-
-    // Track analytics on expand
-    if (next) {
-      try {
-        await fetch("/api/analytics", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ projectId: project.id }),
-        });
-      } catch {}
-    }
+  const handleToggle = () => {
+    setExpanded(!expanded);
   };
 
   return (
