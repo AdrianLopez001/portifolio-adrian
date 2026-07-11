@@ -90,14 +90,24 @@ export default function AdminPage() {
 
   const saveProject = async (id: string) => {
     setSaving(true);
-    await fetch("/api/projects", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ projects }),
-    });
-    setSaving(false);
-    setSavedId(id);
-    setTimeout(() => setSavedId(null), 2000);
+    try {
+      const res = await fetch("/api/projects", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ projects }),
+      });
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        alert(errData.error || "Erro ao salvar o projeto.");
+      } else {
+        setSavedId(id);
+        setTimeout(() => setSavedId(null), 2000);
+      }
+    } catch (e) {
+      alert("Erro ao se conectar ao servidor.");
+    } finally {
+      setSaving(false);
+    }
   };
 
   const updateConfig = (field: keyof Config, value: string) => {
@@ -111,14 +121,24 @@ export default function AdminPage() {
   const saveConfig = async () => {
     if (!config) return;
     setSavingConfig(true);
-    await fetch("/api/config", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(config),
-    });
-    setSavingConfig(false);
-    setConfigSaved(true);
-    setTimeout(() => setConfigSaved(false), 2000);
+    try {
+      const res = await fetch("/api/config", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(config),
+      });
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        alert(errData.error || "Erro ao salvar as configurações.");
+      } else {
+        setConfigSaved(true);
+        setTimeout(() => setConfigSaved(false), 2000);
+      }
+    } catch (e) {
+      alert("Erro ao se conectar ao servidor.");
+    } finally {
+      setSavingConfig(false);
+    }
   };
 
   const logout = () => {

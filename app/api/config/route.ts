@@ -15,6 +15,9 @@ export async function GET() {
 }
 
 export async function PUT(req: NextRequest) {
+  if (process.env.NODE_ENV === "production") {
+    return NextResponse.json({ error: "Forbidden in production" }, { status: 403 });
+  }
   try {
     const body = await req.json();
     writeFileSync(DATA_PATH, JSON.stringify(body, null, 2), "utf-8");
