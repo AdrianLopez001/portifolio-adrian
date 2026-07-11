@@ -63,9 +63,9 @@ export const translations = {
 
     // CV Dropdown
     "cv.pt": "Português",
-    "cv.ptDesc": "CV em português",
+    "cv.ptDesc": "Currículo Adrian",
     "cv.en": "English",
-    "cv.enDesc": "Resume in English",
+    "cv.enDesc": "Currículo Adrian",
     "cv.menuLabel": "Opções de download do currículo",
 
     // Language toggle
@@ -134,9 +134,9 @@ export const translations = {
 
     // CV Dropdown
     "cv.pt": "Português",
-    "cv.ptDesc": "CV in Portuguese",
+    "cv.ptDesc": "Currículo Adrian",
     "cv.en": "English",
-    "cv.enDesc": "Resume in English",
+    "cv.enDesc": "Currículo Adrian",
     "cv.menuLabel": "Resume download options",
 
     // Language toggle
