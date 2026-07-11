@@ -5,7 +5,9 @@ import { Code2, GitBranch } from "lucide-react";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
 import SocialLinks from "@/components/SocialLinks";
+import { I18nProvider, useI18n } from "@/components/I18nProvider";
 
 interface Project {
   id: string;
@@ -40,6 +42,16 @@ interface ClientPageProps {
 }
 
 export default function ClientPage({ projects, config }: ClientPageProps) {
+  return (
+    <I18nProvider>
+      <ClientPageContent projects={projects} config={config} />
+    </I18nProvider>
+  );
+}
+
+function ClientPageContent({ projects, config }: ClientPageProps) {
+  const { t } = useI18n();
+
   // Track unique visits (session-based, no cookies)
   useEffect(() => {
     if (!sessionStorage.getItem("visited")) {
@@ -74,8 +86,8 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
 
         <nav className="hidden md:flex items-center gap-6">
           {[
-            { href: "#sobre", label: "Sobre" },
-            { href: "#projetos", label: "Projetos" },
+            { href: "#sobre", labelKey: "nav.about" as const },
+            { href: "#projetos", labelKey: "nav.projects" as const },
           ].map((item) => (
             <a
               key={item.href}
@@ -85,12 +97,13 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
             >
-              {item.label}
+              {t(item.labelKey)}
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageToggle />
           <ThemeToggle />
         </div>
       </header>
@@ -115,13 +128,13 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
           <div className="mb-10">
             <div className="section-label flex items-center gap-2 mb-3">
               <Code2 size={12} />
-              Projetos selecionados
+              {t("projects.label")}
             </div>
             <h2 className="text-3xl font-bold" style={{ color: "var(--text-primary)" }}>
-              5 sistemas em produção
+              {t("projects.title")}
             </h2>
             <p className="mt-2 text-base" style={{ color: "var(--text-secondary)" }}>
-              Clique em qualquer card para expandir e ver detalhes técnicos completos.
+              {t("projects.subtitle")}
             </p>
           </div>
 
@@ -136,15 +149,15 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
         <section className="px-6 py-20" style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <div className="text-center relative z-10">
             <div className="section-label flex items-center justify-center gap-2 mb-4">
-              Contato
+              {t("contact.label")}
             </div>
             
             <div className="flex flex-col gap-8">
               <h2 className="text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
-                Vamos conversar?
+                {t("contact.title")}
               </h2>
               <p className="text-base mb-8 max-w-md mx-auto" style={{ color: "var(--text-secondary)" }}>
-                Aberto a oportunidades remotas, freelas e projetos técnicos desafiadores.
+                {t("contact.subtitle")}
               </p>
             </div>
             <div className="flex justify-center mb-8">
@@ -157,7 +170,7 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
               className="btn-primary mx-auto"
               style={{ display: "inline-flex" }}
             >
-              💬 Iniciar conversa no WhatsApp
+              {t("contact.whatsapp")}
             </a>
           </div>
         </section>
@@ -172,7 +185,7 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
         }}
       >
         <div className="flex items-center justify-center gap-2 flex-wrap">
-          <span>© 2025 Adrian Lopes.</span>
+          <span>© {new Date().getFullYear()} {t("footer.copy")}</span>
           <span>·</span>
           <a
             href={config.social.github}

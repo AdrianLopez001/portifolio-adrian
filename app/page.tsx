@@ -1,13 +1,9 @@
-import { readFileSync } from "fs";
-import path from "path";
+import { getProjects, getConfig } from "@/lib/data";
 import ClientPage from "./ClientPage";
 
 export default function Home() {
-  const projRaw = readFileSync(path.join(process.cwd(), "data", "projects.json"), "utf-8");
-  const confRaw = readFileSync(path.join(process.cwd(), "data", "config.json"), "utf-8");
-  
-  const { projects } = JSON.parse(projRaw);
-  const config = JSON.parse(confRaw);
-  
+  const projects = getProjects();
+  const config = getConfig();
+
   return <ClientPage projects={projects} config={config} />;
 }

@@ -26,13 +26,20 @@ export const metadata: Metadata = {
     "Brazil",
   ],
   authors: [{ name: "Adrian Lopes" }],
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "https://portfolio-adrian.vercel.app"
+  ),
   openGraph: {
     title: "Adrian Lopes — Software Engineer",
     description:
       "Software Engineer | Java & Spring Boot | Python & AI — Building scalable backend systems",
     type: "website",
     locale: "pt_BR",
-    url: "https://portfolio-adrian.vercel.app",
+    url: "/",
     siteName: "Adrian Lopes Portfolio",
     images: [
       {

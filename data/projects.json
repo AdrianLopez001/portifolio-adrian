@@ -13,32 +13,7 @@
       "contribution": "Construí o backend de RAG (Retrieval-Augmented Generation) de nível corporativo utilizando o stack mais moderno de IA no Java. O pipeline inclui a extração de texto via Apache Tika, geração de embeddings contextuais, persistência em banco vetorial com indexação HNSW e pipeline de CI com testes automatizados via Mockito.",
       "stack": ["Java 21", "Spring Boot 3.3", "Spring AI", "GPT-4o-mini", "PostgreSQL + pgvector", "Docker", "Apache Tika", "GitHub Actions", "Mockito"]
     },
-    {
-      "id": "fintrack-system",
-      "repo": "FINTRACK-SYSTEM",
-      "title": "FINTRACK System",
-      "shortDescription": "Sistema de gestão financeira com leitura inteligente de PDFs para oficinas.",
-      "language": "Python",
-      "languageColor": "#3572A5",
-      "demoUrl": "https://frontend-beta-six-41.vercel.app",
-      "githubUrl": "https://github.com/AdrianLopez001/FINTRACK-SYSTEM",
-      "problem": "Oficinas mecânicas de médio porte não possuem sistemas acessíveis para rastrear faturamento, metas e desempenho diário. O controle é feito em planilhas manuais desconectadas da realidade operacional.",
-      "contribution": "Desenvolvi um sistema completo de auditoria financeira que faz parsing automático de relatórios PDF via regex, categorizando cada linha em Receita ou Despesa com base em padrões configuráveis. Implementei o dashboard de performance com gráfico de faturamento diário vs meta, cálculo de ticket médio e breakdown semanal. Adicionei um módulo CRM de disparo WhatsApp com templating de mensagens e catálogo de peças por placa de veículo.",
-      "stack": ["Python", "Streamlit", "pdfplumber", "PostgreSQL", "psycopg2", "React", "Vite", "Framer Motion"]
-    },
-    {
-      "id": "caresync",
-      "repo": "CareSync",
-      "title": "CareSync — Gestão Médica",
-      "shortDescription": "Plataforma de gestão médica integrada com foco em segurança de dados clínicos.",
-      "language": "Java",
-      "languageColor": "#b07219",
-      "demoUrl": "https://frontend-6qcsny4v4-fortessdunes.vercel.app",
-      "githubUrl": "https://github.com/AdrianLopez001/CareSync",
-      "problem": "Clínicas e consultórios médicos dependem de sistemas legados caros e inflexíveis para agendamentos e prontuários. A integração entre módulos (agenda, prontuário, faturamento) é inexistente, gerando retrabalho e risco de erros clínicos.",
-      "contribution": "Desenvolvi um sistema de agendamento e notificação de consultas orientado a eventos, construído com microsserviços independentes (appointment-service e notification-service) que se comunicam de forma assíncrona via RabbitMQ (Topic Exchange). Implementei persistência com consistência transacional garantindo publicação pós-commit, e ampla cobertura de testes unitários e de integração integrados em pipeline de CI.",
-      "stack": ["Java", "Spring Boot", "RabbitMQ", "Microservices", "PostgreSQL", "JUnit 5", "Mockito", "GitHub Actions"]
-    },
+    
     {
       "id": "system-lumiar",
       "repo": "System-lumiar",

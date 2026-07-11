@@ -11,6 +11,7 @@ import {
   Layers,
   Code2,
 } from "lucide-react";
+import { useI18n } from "./I18nProvider";
 
 interface Project {
   id: string;
@@ -33,6 +34,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const { t } = useI18n();
 
   const handleToggle = async () => {
     const next = !expanded;
@@ -148,7 +150,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   style={{ color: "var(--accent)" }}
                 >
                   <Lightbulb size={13} />
-                  Problema que resolve
+                  {t("card.problem")}
                 </div>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {project.problem}
@@ -162,7 +164,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   style={{ color: "var(--accent)" }}
                 >
                   <User2 size={13} />
-                  Minha contribuição
+                  {t("card.contribution")}
                 </div>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {project.contribution}
@@ -176,7 +178,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   style={{ color: "var(--accent)" }}
                 >
                   <Layers size={13} />
-                  Stack utilizada
+                  {t("card.stack")}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
@@ -198,7 +200,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   className="btn-primary"
                 >
                   <ExternalLink size={14} />
-                  Ver Demo
+                  {t("card.demo")}
                 </a>
                 <a
                   href={project.githubUrl}
@@ -208,7 +210,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   className="btn-ghost"
                 >
                   <GitBranch size={14} />
-                  Ver Código
+                  {t("card.code")}
                 </a>
               </div>
             </div>

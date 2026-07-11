@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Lock, LogOut, Save, BarChart3, Eye,
   MousePointerClick, Edit3, ChevronDown, ChevronUp, Check
@@ -47,7 +48,10 @@ async function sha256(msg: string) {
 const CORRECT_HASH = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9";
 
 export default function AdminPage() {
-  const [authed, setAuthed] = useState(false);
+  const [authed, setAuthed] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return sessionStorage.getItem("admin_auth") === "1";
+  });
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [projects, setProjects] = useState<Project[]>([]);
@@ -70,10 +74,6 @@ export default function AdminPage() {
       setError("Senha incorreta.");
     }
   };
-
-  useEffect(() => {
-    if (sessionStorage.getItem("admin_auth")) setAuthed(true);
-  }, []);
 
   useEffect(() => {
     if (!authed) return;
@@ -206,14 +206,14 @@ export default function AdminPage() {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <a
+          <Link
             href="/"
             className="btn-ghost"
             style={{ padding: "0.5rem 1rem", fontSize: "0.8rem" }}
           >
             <Eye size={13} />
             Ver site
-          </a>
+          </Link>
           <button onClick={logout} className="btn-ghost" style={{ padding: "0.5rem 1rem", fontSize: "0.8rem", color: "#f44336", borderColor: "#f44336" }}>
             <LogOut size={13} />
             Sair

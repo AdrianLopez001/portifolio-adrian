@@ -8,7 +8,8 @@ export async function GET() {
   try {
     const raw = readFileSync(DATA_PATH, "utf-8");
     return NextResponse.json(JSON.parse(raw));
-  } catch {
+  } catch (error) {
+    console.error("Error reading analytics:", error);
     return NextResponse.json({ visits: 0, cardClicks: {} });
   }
 }
@@ -28,7 +29,8 @@ export async function POST(req: NextRequest) {
 
     writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), "utf-8");
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Error writing analytics:", error);
     return NextResponse.json({ error: "Failed" }, { status: 500 });
   }
 }

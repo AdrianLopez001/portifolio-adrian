@@ -5,23 +5,32 @@ import Image from "next/image";
 import { MapPin, Briefcase, Code2, Brain, ChevronRight } from "lucide-react";
 import SocialLinks from "./SocialLinks";
 import CVDownloadButton from "./CVDownloadButton";
+import { useI18n } from "./I18nProvider";
+import type { Config } from "@/lib/data";
 
-const skills = [
-  { icon: "☕", label: "Java & Spring Boot", desc: "Microsserviços, Spring AI, JPA, JWT, RabbitMQ" },
-  { icon: "🐍", label: "Python & AI", desc: "RAG, OpenAI API, Machine Learning, SHAP values" },
-  { icon: "🗄️", label: "Dados & Infra", desc: "PostgreSQL, pgvector, Docker, GitHub Actions" },
-  { icon: "💻", label: "Frontend & Full-Stack", desc: "Next.js 15, React, Node.js, JavaScript, HTML/CSS" },
-];
-
-const interests = ["Backend Jr", "RAG & LLMs", "Microservices", "Testes (JUnit/Mockito)", "Trabalho Remoto"];
-
-export default function Hero({ config }: { config: any }) {
+export default function Hero({ config }: { config: Config }) {
   const [visible, setVisible] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 100);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(timer);
   }, []);
+
+  const skills = [
+    { icon: "☕", labelKey: "skill.java.label" as const, descKey: "skill.java.desc" as const },
+    { icon: "🐍", labelKey: "skill.python.label" as const, descKey: "skill.python.desc" as const },
+    { icon: "🗄️", labelKey: "skill.data.label" as const, descKey: "skill.data.desc" as const },
+    { icon: "💻", labelKey: "skill.frontend.label" as const, descKey: "skill.frontend.desc" as const },
+  ];
+
+  const interestKeys = [
+    "interest.1",
+    "interest.2",
+    "interest.3",
+    "interest.4",
+    "interest.5",
+  ] as const;
 
   return (
     <section
@@ -89,7 +98,7 @@ export default function Hero({ config }: { config: any }) {
         <div className="flex-1 flex flex-col items-center text-center">
           <div className="section-label mb-3 flex items-center justify-center gap-2">
             <Briefcase size={12} />
-            Disponível para oportunidades
+            {t("hero.available")}
           </div>
 
           <h1 className="text-4xl lg:text-5xl font-bold mb-3 tracking-tight" style={{ lineHeight: 1.2 }}>
@@ -97,15 +106,16 @@ export default function Hero({ config }: { config: any }) {
           </h1>
 
           <h2 className="text-xl lg:text-2xl font-medium mb-5" style={{ color: "var(--text-secondary)" }}>
-            <span className="gradient-text">Software Engineer</span>
+            <span className="gradient-text">{t("hero.role")}</span>
           </h2>
 
           <p className="text-base leading-relaxed mb-8 mx-auto" style={{ color: "var(--text-secondary)", maxWidth: "660px" }}>
-            Estudante de ADS buscando minha primeira oportunidade como{" "}
-            <strong style={{ color: "var(--text-primary)" }}>Desenvolvedor Backend Júnior</strong> ou{" "}
-            <strong style={{ color: "var(--text-primary)" }}>Full-Stack Júnior</strong>. Desenvolvo
-            sistemas escaláveis com <strong style={{ color: "var(--text-primary)" }}>Java & Spring Boot</strong> e
-            integro inteligência artificial utilizando <strong style={{ color: "var(--text-primary)" }}>Python (RAG, Machine Learning)</strong>. Tenho facilidade com trabalho remoto, aprendo rápido e sou motivado a resolver problemas reais.
+            {t("hero.bio")}{" "}
+            <strong style={{ color: "var(--text-primary)" }}>{t("hero.backendJr")}</strong> {t("hero.or")}{" "}
+            <strong style={{ color: "var(--text-primary)" }}>{t("hero.fullstackJr")}</strong>{t("hero.bioMiddle")}{" "}
+            <strong style={{ color: "var(--text-primary)" }}>Java &amp; Spring Boot</strong>{" "}
+            {t("hero.bioPython")}{" "}
+            <strong style={{ color: "var(--text-primary)" }}>Python (RAG, Machine Learning)</strong>{t("hero.bioEnd")}
           </p>
 
           {/* CTAs */}
@@ -115,7 +125,7 @@ export default function Hero({ config }: { config: any }) {
               href="#projetos"
               className="btn-ghost"
             >
-              Ver Projetos
+              {t("hero.viewProjects")}
               <ChevronRight size={16} />
             </a>
           </div>
@@ -124,17 +134,17 @@ export default function Hero({ config }: { config: any }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8 w-full max-w-2xl mx-auto">
             {skills.map((s) => (
               <div
-                key={s.label}
+                key={s.labelKey}
                 className="card flex flex-col items-center text-center gap-2 p-4 cursor-default"
                 style={{ background: "var(--bg-card)" }}
               >
                 <span className="text-2xl">{s.icon}</span>
                 <div>
                   <div className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>
-                    {s.label}
+                    {t(s.labelKey)}
                   </div>
                   <div className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>
-                    {s.desc}
+                    {t(s.descKey)}
                   </div>
                 </div>
               </div>
@@ -148,12 +158,12 @@ export default function Hero({ config }: { config: any }) {
               style={{ color: "var(--text-muted)" }}
             >
               <Brain size={12} />
-              Interesses:
+              {t("hero.interests")}
             </div>
-            {interests.map((tag) => (
-              <span key={tag} className="badge">
+            {interestKeys.map((key) => (
+              <span key={key} className="badge">
                 <Code2 size={10} />
-                {tag}
+                {t(key)}
               </span>
             ))}
           </div>
