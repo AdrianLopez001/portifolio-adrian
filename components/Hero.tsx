@@ -7,13 +7,13 @@ import SocialLinks from "./SocialLinks";
 import CVDownloadButton from "./CVDownloadButton";
 
 const skills = [
-  { icon: "☕", label: "Java & Spring Boot", desc: "Sistemas backend escaláveis e seguros" },
-  { icon: "🐍", label: "Python & AI", desc: "RAG, Machine Learning, automação de dados" },
-  { icon: "🗄️", label: "Banco de Dados", desc: "PostgreSQL, pgvector, Flyway migrations" },
-  { icon: "🐳", label: "DevOps & Cloud", desc: "Docker, CI/CD, Vercel, APIs REST" },
+  { icon: "☕", label: "Java & Spring Boot", desc: "Microsserviços, Spring AI, JPA, JWT, RabbitMQ" },
+  { icon: "🐍", label: "Python & AI", desc: "RAG, OpenAI API, Machine Learning, SHAP values" },
+  { icon: "🗄️", label: "Dados & Infra", desc: "PostgreSQL, pgvector, Docker, GitHub Actions" },
+  { icon: "💻", label: "Frontend & Full-Stack", desc: "Next.js 15, React, Node.js, JavaScript, HTML/CSS" },
 ];
 
-const interests = ["RAG & LLMs", "Microservices", "Spring Security", "Data Engineering", "Open Source"];
+const interests = ["Backend Jr", "RAG & LLMs", "Microservices", "Testes (JUnit/Mockito)", "Trabalho Remoto"];
 
 export default function Hero({ config }: { config: any }) {
   const [visible, setVisible] = useState(false);
@@ -100,12 +100,12 @@ export default function Hero({ config }: { config: any }) {
             <span className="gradient-text">Software Engineer</span>
           </h2>
 
-          <p className="text-base leading-relaxed mb-8 mx-auto" style={{ color: "var(--text-secondary)", maxWidth: "600px" }}>
-            Desenvolvedor backend focado em construir sistemas escaláveis e robustos com{" "}
-            <strong style={{ color: "var(--text-primary)" }}>Java & Spring Boot</strong> e em aplicar
-            técnicas de <strong style={{ color: "var(--text-primary)" }}>IA generativa</strong>{" "}
-            (RAG, Machine Learning) para resolver problemas reais de negócios. Baseado em Natal, RN,
-            buscando oportunidades remotas ou híbridas.
+          <p className="text-base leading-relaxed mb-8 mx-auto" style={{ color: "var(--text-secondary)", maxWidth: "660px" }}>
+            Estudante de ADS buscando minha primeira oportunidade como{" "}
+            <strong style={{ color: "var(--text-primary)" }}>Desenvolvedor Backend Júnior</strong> ou{" "}
+            <strong style={{ color: "var(--text-primary)" }}>Full-Stack Júnior</strong>. Desenvolvo
+            sistemas escaláveis com <strong style={{ color: "var(--text-primary)" }}>Java & Spring Boot</strong> e
+            integro inteligência artificial utilizando <strong style={{ color: "var(--text-primary)" }}>Python (RAG, Machine Learning)</strong>. Tenho facilidade com trabalho remoto, aprendo rápido e sou motivado a resolver problemas reais.
           </p>
 
           {/* CTAs */}

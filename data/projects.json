@@ -7,11 +7,11 @@
       "shortDescription": "Motor de busca semântica corporativa com RAG e embeddings em Java.",
       "language": "Java",
       "languageColor": "#b07219",
-      "demoUrl": "https://corporate-rag-engine.vercel.app",
+      "demoUrl": "https://frontend-bd7j3o6me-fortessdunes.vercel.app",
       "githubUrl": "https://github.com/AdrianLopez001/Corporate-RAG-Engine",
       "problem": "Empresas acumulam gigabytes de documentos internos (PDFs, relatórios, manuais) que se tornam inacessíveis. Funcionários perdem horas buscando informação que já existe, e a tomada de decisão é prejudicada pela ausência de contexto.",
-      "contribution": "Arquitetei e implementei do zero o pipeline completo de RAG (Retrieval-Augmented Generation) em Java/Spring Boot. Integrei a geração de embeddings vetoriais com armazenamento em banco de dados vetorial, construí a camada de recuperação semântica com re-ranking por relevância e conectei ao LLM para síntese de respostas contextuais. Toda a ingestão de documentos foi automatizada via processamento assíncrono com filas.",
-      "stack": ["Java 17", "Spring Boot 3.2", "Spring AI", "PostgreSQL + pgvector", "OpenAI API", "Docker", "Maven"]
+      "contribution": "Construí o backend de RAG (Retrieval-Augmented Generation) de nível corporativo utilizando o stack mais moderno de IA no Java. O pipeline inclui a extração de texto via Apache Tika, geração de embeddings contextuais, persistência em banco vetorial com indexação HNSW e pipeline de CI com testes automatizados via Mockito.",
+      "stack": ["Java 21", "Spring Boot 3.3", "Spring AI", "GPT-4o-mini", "PostgreSQL + pgvector", "Docker", "Apache Tika", "GitHub Actions", "Mockito"]
     },
     {
       "id": "fintrack-system",
@@ -33,11 +33,11 @@
       "shortDescription": "Plataforma de gestão médica integrada com foco em segurança de dados clínicos.",
       "language": "Java",
       "languageColor": "#b07219",
-      "demoUrl": "https://care-sync-orcin.vercel.app",
+      "demoUrl": "https://frontend-6qcsny4v4-fortessdunes.vercel.app",
       "githubUrl": "https://github.com/AdrianLopez001/CareSync",
       "problem": "Clínicas e consultórios médicos dependem de sistemas legados caros e inflexíveis para agendamentos e prontuários. A integração entre módulos (agenda, prontuário, faturamento) é inexistente, gerando retrabalho e risco de erros clínicos.",
-      "contribution": "Projetei a arquitetura de microserviços com Spring Boot, implementando módulos independentes para agendamento, prontuário eletrônico e gestão de pacientes. Garanti a segurança dos dados clínicos com Spring Security, JWT e controle de acesso baseado em papéis (RBAC). Implementei comunicação assíncrona entre serviços via eventos e integrei com banco de dados relacional com migrações versionadas.",
-      "stack": ["Java 17", "Spring Boot 3.2", "Spring Security", "JWT", "PostgreSQL", "Flyway", "Docker", "Microservices"]
+      "contribution": "Desenvolvi um sistema de agendamento e notificação de consultas orientado a eventos, construído com microsserviços independentes (appointment-service e notification-service) que se comunicam de forma assíncrona via RabbitMQ (Topic Exchange). Implementei persistência com consistência transacional garantindo publicação pós-commit, e ampla cobertura de testes unitários e de integração integrados em pipeline de CI.",
+      "stack": ["Java", "Spring Boot", "RabbitMQ", "Microservices", "PostgreSQL", "JUnit 5", "Mockito", "GitHub Actions"]
     },
     {
       "id": "system-lumiar",
