@@ -29,22 +29,6 @@ export default function Hero({ config }: { config: any }) {
       className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 overflow-hidden"
       style={{ maxWidth: "1100px", margin: "0 auto" }}
     >
-      {/* Background decorative glow */}
-      <div
-        className="absolute top-1/4 -left-32 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, var(--accent-glow) 0%, transparent 70%)",
-          filter: "blur(40px)",
-        }}
-      />
-      <div
-        className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(167,139,250,0.1) 0%, transparent 70%)",
-          filter: "blur(40px)",
-        }}
-      />
-
       <div
         className="relative flex flex-col lg:flex-row items-center lg:items-start gap-12"
         style={{
@@ -158,9 +142,9 @@ export default function Hero({ config }: { config: any }) {
           </div>
 
           {/* Interest tags */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
             <div
-              className="flex items-center gap-1.5 text-xs font-medium mr-2"
+              className="flex items-center gap-1.5 text-xs font-medium mr-1"
               style={{ color: "var(--text-muted)" }}
             >
               <Brain size={12} />

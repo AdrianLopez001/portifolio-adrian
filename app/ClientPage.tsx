@@ -76,7 +76,6 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
           {[
             { href: "#sobre", label: "Sobre" },
             { href: "#projetos", label: "Projetos" },
-            { href: "#linguagens", label: "Linguagens" },
           ].map((item) => (
             <a
               key={item.href}
@@ -96,8 +95,14 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
         </div>
       </header>
 
+      {/* ── Fixed Background Glow ── */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--accent)] opacity-[0.15] blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#a78bfa] opacity-[0.15] blur-[120px]" />
+      </div>
+
       {/* ── Main ── */}
-      <main>
+      <main className="relative z-10">
         {/* Hero */}
         <Hero config={config} />
 
@@ -129,16 +134,19 @@ export default function ClientPage({ projects, config }: ClientPageProps) {
 
         {/* Contact Footer */}
         <section className="px-6 py-20" style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <div className="text-center">
+          <div className="text-center relative z-10">
             <div className="section-label flex items-center justify-center gap-2 mb-4">
               Contato
             </div>
-            <h2 className="text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
-              Vamos conversar?
-            </h2>
-            <p className="text-base mb-8 max-w-md mx-auto" style={{ color: "var(--text-secondary)" }}>
-              Aberto a oportunidades remotas, freelas e projetos técnicos desafiadores.
-            </p>
+            
+            <div className="flex flex-col gap-8">
+              <h2 className="text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+                Vamos conversar?
+              </h2>
+              <p className="text-base mb-8 max-w-md mx-auto" style={{ color: "var(--text-secondary)" }}>
+                Aberto a oportunidades remotas, freelas e projetos técnicos desafiadores.
+              </p>
+            </div>
             <div className="flex justify-center mb-8">
               <SocialLinks social={config.social} showLabel={true} />
             </div>

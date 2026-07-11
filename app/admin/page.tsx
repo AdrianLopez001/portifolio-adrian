@@ -379,28 +379,36 @@ export default function AdminPage() {
             </h2>
             
             <div className="card p-6 flex flex-col gap-6">
+              <div className="p-4 mb-4 text-sm rounded-lg" style={{ background: "rgba(255, 165, 0, 0.1)", border: "1px solid rgba(255, 165, 0, 0.3)", color: "var(--text-primary)" }}>
+                <strong style={{ color: "#ff9800" }}>⚠️ Aviso sobre Vercel:</strong> Alterações feitas aqui (como uploads de arquivos e textos) são salvas em um arquivo JSON local. Como a Vercel é <i>Serverless</i>, se você fizer isso online (em produção), os dados serão perdidos quando o servidor reiniciar. Para alterações <strong>permanentes</strong>, rode o painel localmente (`npm run dev`), faça o upload, e então rode `git push`.
+              </div>
+
               <h3 className="text-md font-medium border-b pb-2" style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}>
-                Perfil e Currículo (URLs)
+                Perfil e Currículo (Uploads ou URLs)
               </h3>
-              <Field
-                label="URL da Foto de Perfil (Avatar)"
+              
+              <FileUploadField
+                label="Foto de Perfil (Avatar)"
                 value={config.avatarUrl}
+                accept="image/*"
                 onChange={(v) => updateConfig("avatarUrl", v)}
               />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Field
-                  label="URL do Currículo (PT)"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <FileUploadField
+                  label="Currículo (PT)"
                   value={config.cvPtUrl}
+                  accept=".pdf"
                   onChange={(v) => updateConfig("cvPtUrl", v)}
                 />
-                <Field
-                  label="URL do Currículo (EN)"
+                <FileUploadField
+                  label="Currículo (EN)"
                   value={config.cvEnUrl}
+                  accept=".pdf"
                   onChange={(v) => updateConfig("cvEnUrl", v)}
                 />
               </div>
 
-              <h3 className="text-md font-medium border-b pb-2 mt-4" style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}>
+              <h3 className="text-md font-medium border-b pb-2 mt-6" style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}>
                 Redes Sociais e Contato
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -492,6 +500,68 @@ function Field({
           onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
         />
       )}
+    </div>
+  );
+}
+
+function FileUploadField({ label, value, accept, onChange }: { label: string; value: string; accept: string; onChange: (v: string) => void }) {
+  const [loading, setLoading] = useState(false);
+  const isBase64 = value.startsWith("data:");
+
+  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setLoading(true);
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const result = event.target?.result as string;
+      onChange(result);
+      setLoading(false);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  return (
+    <div>
+      <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: "var(--text-secondary)" }}>
+        {label}
+      </label>
+      <div className="flex flex-col gap-2">
+        <input
+          type="file"
+          accept={accept}
+          onChange={handleFile}
+          className="text-sm"
+          style={{ color: "var(--text-secondary)" }}
+        />
+        {loading ? (
+          <span className="text-xs" style={{ color: "var(--accent)" }}>Carregando arquivo...</span>
+        ) : (
+          <input
+            type="text"
+            value={isBase64 ? "(Arquivo embutido em Base64)" : value}
+            onChange={(e) => !isBase64 && onChange(e.target.value)}
+            disabled={isBase64}
+            placeholder="Ou cole uma URL aqui..."
+            className="w-full px-3 py-2 rounded-lg text-sm outline-none"
+            style={{ 
+              background: "var(--bg-main)", 
+              border: "1px solid var(--border)", 
+              color: isBase64 ? "var(--text-muted)" : "var(--text-primary)",
+              fontFamily: "inherit"
+            }}
+          />
+        )}
+        {isBase64 && (
+          <button 
+            onClick={() => onChange("")} 
+            className="text-xs self-start mt-1 hover:underline"
+            style={{ color: "#f44336" }}
+          >
+            Remover arquivo
+          </button>
+        )}
+      </div>
     </div>
   );
 }
