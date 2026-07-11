@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Adrian Lopes Portfolio",
     images: [
       {
-        url: "https://avatars.githubusercontent.com/u/261272747?v=4",
+        url: "/avatar.jpg",
         width: 400,
         height: 400,
         alt: "Adrian Lopes",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Adrian Lopes — Software Engineer",
     description: "Software Engineer | Java & Spring Boot | Python & AI",
-    images: ["https://avatars.githubusercontent.com/u/261272747?v=4"],
+    images: ["/avatar.jpg"],
   },
   robots: {
     index: true,
