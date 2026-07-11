@@ -27,7 +27,7 @@ export const translations = {
     "skill.python.label": "Python & AI",
     "skill.python.desc": "RAG, OpenAI API, Machine Learning, SHAP values",
     "skill.data.label": "Dados & Infra",
-    "skill.data.desc": "PostgreSQL, pgvector, Docker, GitHub Actions",
+    "skill.data.desc": "PostgreSQL, pgvector, GitHub Actions",
     "skill.frontend.label": "Frontend & Full-Stack",
     "skill.frontend.desc": "Next.js 15, React, Node.js, JavaScript, HTML/CSS",
 
@@ -40,7 +40,7 @@ export const translations = {
 
     // Projects section
     "projects.label": "Projetos selecionados",
-    "projects.title": "5 sistemas em produção",
+    "projects.title": "{count} sistemas em produção",
     "projects.subtitle":
       "Clique em qualquer card para expandir e ver detalhes técnicos completos.",
 
@@ -98,7 +98,7 @@ export const translations = {
     "skill.python.label": "Python & AI",
     "skill.python.desc": "RAG, OpenAI API, Machine Learning, SHAP values",
     "skill.data.label": "Data & Infra",
-    "skill.data.desc": "PostgreSQL, pgvector, Docker, GitHub Actions",
+    "skill.data.desc": "PostgreSQL, pgvector, GitHub Actions",
     "skill.frontend.label": "Frontend & Full-Stack",
     "skill.frontend.desc": "Next.js 15, React, Node.js, JavaScript, HTML/CSS",
 
@@ -111,7 +111,7 @@ export const translations = {
 
     // Projects section
     "projects.label": "Selected projects",
-    "projects.title": "5 systems in production",
+    "projects.title": "{count} systems in production",
     "projects.subtitle":
       "Click any card to expand and see full technical details.",
 

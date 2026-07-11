@@ -131,7 +131,7 @@ function ClientPageContent({ projects, config }: ClientPageProps) {
               {t("projects.label")}
             </div>
             <h2 className="text-3xl font-bold" style={{ color: "var(--text-primary)" }}>
-              {t("projects.title")}
+              {t("projects.title").replace("{count}", projects.length.toString())}
             </h2>
             <p className="mt-2 text-base" style={{ color: "var(--text-secondary)" }}>
               {t("projects.subtitle")}
