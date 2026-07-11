@@ -15,7 +15,7 @@ const skills = [
 
 const interests = ["RAG & LLMs", "Microservices", "Spring Security", "Data Engineering", "Open Source"];
 
-export default function Hero() {
+export default function Hero({ config }: { config: any }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function Hero() {
               style={{ width: 128, height: 128, border: "4px solid var(--bg-main)" }}
             >
               <Image
-                src="https://avatars.githubusercontent.com/u/261272747?v=4"
+                src={config.avatarUrl}
                 alt="Adrian Lopes"
                 width={128}
                 height={128}
@@ -90,7 +90,7 @@ export default function Hero() {
             />
           </div>
 
-          <SocialLinks />
+          <SocialLinks social={config.social} />
 
           <div
             className="flex items-center gap-1.5 text-sm"
@@ -126,7 +126,7 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-10">
-            <CVDownloadButton />
+            <CVDownloadButton config={config} />
             <a
               href="#projetos"
               className="btn-ghost"

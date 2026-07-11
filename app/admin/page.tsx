@@ -25,6 +25,19 @@ interface Analytics {
   cardClicks: Record<string, number>;
 }
 
+interface Config {
+  avatarUrl: string;
+  cvPtUrl: string;
+  cvEnUrl: string;
+  social: {
+    github: string;
+    linkedin: string;
+    whatsapp: string;
+    email: string;
+    instagram: string;
+  };
+}
+
 // SHA-256 in browser
 async function sha256(msg: string) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
@@ -38,10 +51,14 @@ export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [projects, setProjects] = useState<Project[]>([]);
+  const [config, setConfig] = useState<Config | null>(null);
   const [analytics, setAnalytics] = useState<Analytics | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<"projects" | "config">("projects");
   const [saving, setSaving] = useState(false);
+  const [savingConfig, setSavingConfig] = useState(false);
   const [savedId, setSavedId] = useState<string | null>(null);
+  const [configSaved, setConfigSaved] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,6 +78,7 @@ export default function AdminPage() {
   useEffect(() => {
     if (!authed) return;
     fetch("/api/projects").then((r) => r.json()).then((d) => setProjects(d.projects || []));
+    fetch("/api/config").then((r) => r.json()).then(setConfig);
     fetch("/api/analytics").then((r) => r.json()).then(setAnalytics);
   }, [authed]);
 
@@ -80,6 +98,27 @@ export default function AdminPage() {
     setSaving(false);
     setSavedId(id);
     setTimeout(() => setSavedId(null), 2000);
+  };
+
+  const updateConfig = (field: keyof Config, value: string) => {
+    setConfig((prev) => prev ? { ...prev, [field]: value } : null);
+  };
+
+  const updateSocial = (field: keyof Config["social"], value: string) => {
+    setConfig((prev) => prev ? { ...prev, social: { ...prev.social, [field]: value } } : null);
+  };
+
+  const saveConfig = async () => {
+    if (!config) return;
+    setSavingConfig(true);
+    await fetch("/api/config", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(config),
+    });
+    setSavingConfig(false);
+    setConfigSaved(true);
+    setTimeout(() => setConfigSaved(false), 2000);
   };
 
   const logout = () => {
@@ -222,94 +261,187 @@ export default function AdminPage() {
           </section>
         )}
 
-        {/* Projects Editor */}
-        <section>
-          <h2 className="text-lg font-semibold mb-4 flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
-            <Edit3 size={18} style={{ color: "var(--accent)" }} />
-            Editar Projetos
-          </h2>
+        {/* Tabs */}
+        <div className="flex gap-4 mb-4">
+          <button
+            onClick={() => setActiveTab("projects")}
+            className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+              activeTab === "projects" ? "bg-[var(--accent)] text-white" : "bg-[var(--bg-card)] text-[var(--text-secondary)] hover:bg-[var(--bg-card-hover)]"
+            }`}
+          >
+            Projetos
+          </button>
+          <button
+            onClick={() => setActiveTab("config")}
+            className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+              activeTab === "config" ? "bg-[var(--accent)] text-white" : "bg-[var(--bg-card)] text-[var(--text-secondary)] hover:bg-[var(--bg-card-hover)]"
+            }`}
+          >
+            Configurações Globais
+          </button>
+        </div>
 
-          <div className="flex flex-col gap-3">
-            {projects.map((project) => (
-              <div key={project.id} className="card overflow-hidden">
-                {/* Accordion header */}
-                <button
-                  onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
-                  className="w-full flex items-center justify-between p-4 hover:bg-[var(--bg-card-hover)] transition-colors duration-150 cursor-pointer"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="w-3 h-3 rounded-full" style={{ backgroundColor: project.languageColor }} />
-                    <span className="font-medium text-sm" style={{ color: "var(--text-primary)" }}>
-                      {project.title}
-                    </span>
-                    <span className="badge">{project.language}</span>
-                  </div>
-                  {expandedId === project.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
+        {activeTab === "projects" && (
+          <section>
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+              <Edit3 size={18} style={{ color: "var(--accent)" }} />
+              Editar Projetos
+            </h2>
 
-                {expandedId === project.id && (
-                  <div className="p-5 border-t flex flex-col gap-5" style={{ borderColor: "var(--border)" }}>
-
-                    <Field
-                      label="Título"
-                      value={project.title}
-                      onChange={(v) => updateProject(project.id, "title", v)}
-                    />
-                    <Field
-                      label="Descrição curta"
-                      value={project.shortDescription}
-                      multiline
-                      onChange={(v) => updateProject(project.id, "shortDescription", v)}
-                    />
-                    <Field
-                      label="URL da Demo (Vercel)"
-                      value={project.demoUrl}
-                      onChange={(v) => updateProject(project.id, "demoUrl", v)}
-                    />
-                    <Field
-                      label="Problema que resolve"
-                      value={project.problem}
-                      multiline
-                      rows={4}
-                      onChange={(v) => updateProject(project.id, "problem", v)}
-                    />
-                    <Field
-                      label="Minha contribuição"
-                      value={project.contribution}
-                      multiline
-                      rows={5}
-                      onChange={(v) => updateProject(project.id, "contribution", v)}
-                    />
-                    <div>
-                      <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: "var(--text-secondary)" }}>
-                        Stack (separado por vírgula)
-                      </label>
-                      <input
-                        type="text"
-                        value={project.stack.join(", ")}
-                        onChange={(e) => updateProject(project.id, "stack", e.target.value.split(",").map((s) => s.trim()))}
-                        className="w-full px-3 py-2 rounded-lg text-sm outline-none"
-                        style={{ background: "var(--bg-main)", border: "1px solid var(--border)", color: "var(--text-primary)" }}
-                        onFocus={(e) => (e.target.style.borderColor = "var(--accent)")}
-                        onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
-                      />
+            <div className="flex flex-col gap-3">
+              {projects.map((project) => (
+                <div key={project.id} className="card overflow-hidden">
+                  {/* Accordion header */}
+                  <button
+                    onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
+                    className="w-full flex items-center justify-between p-4 hover:bg-[var(--bg-card-hover)] transition-colors duration-150 cursor-pointer"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full" style={{ backgroundColor: project.languageColor }} />
+                      <span className="font-medium text-sm" style={{ color: "var(--text-primary)" }}>
+                        {project.title}
+                      </span>
+                      <span className="badge">{project.language}</span>
                     </div>
+                    {expandedId === project.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  </button>
 
-                    <button
-                      id={`save-${project.id}`}
-                      onClick={() => saveProject(project.id)}
-                      disabled={saving}
-                      className="btn-primary self-start"
-                    >
-                      {savedId === project.id ? <Check size={14} /> : <Save size={14} />}
-                      {savedId === project.id ? "Salvo!" : saving ? "Salvando..." : "Salvar alterações"}
-                    </button>
-                  </div>
-                )}
+                  {expandedId === project.id && (
+                    <div className="p-5 border-t flex flex-col gap-5" style={{ borderColor: "var(--border)" }}>
+
+                      <Field
+                        label="Título"
+                        value={project.title}
+                        onChange={(v) => updateProject(project.id, "title", v)}
+                      />
+                      <Field
+                        label="Descrição curta"
+                        value={project.shortDescription}
+                        multiline
+                        onChange={(v) => updateProject(project.id, "shortDescription", v)}
+                      />
+                      <Field
+                        label="URL da Demo (Vercel)"
+                        value={project.demoUrl}
+                        onChange={(v) => updateProject(project.id, "demoUrl", v)}
+                      />
+                      <Field
+                        label="Problema que resolve"
+                        value={project.problem}
+                        multiline
+                        rows={4}
+                        onChange={(v) => updateProject(project.id, "problem", v)}
+                      />
+                      <Field
+                        label="Minha contribuição"
+                        value={project.contribution}
+                        multiline
+                        rows={5}
+                        onChange={(v) => updateProject(project.id, "contribution", v)}
+                      />
+                      <div>
+                        <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: "var(--text-secondary)" }}>
+                          Stack (separado por vírgula)
+                        </label>
+                        <input
+                          type="text"
+                          value={project.stack.join(", ")}
+                          onChange={(e) => updateProject(project.id, "stack", e.target.value.split(",").map((s) => s.trim()))}
+                          className="w-full px-3 py-2 rounded-lg text-sm outline-none"
+                          style={{ background: "var(--bg-main)", border: "1px solid var(--border)", color: "var(--text-primary)" }}
+                          onFocus={(e) => (e.target.style.borderColor = "var(--accent)")}
+                          onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
+                        />
+                      </div>
+
+                      <button
+                        id={`save-${project.id}`}
+                        onClick={() => saveProject(project.id)}
+                        disabled={saving}
+                        className="btn-primary self-start"
+                      >
+                        {savedId === project.id ? <Check size={14} /> : <Save size={14} />}
+                        {savedId === project.id ? "Salvo!" : saving ? "Salvando..." : "Salvar alterações"}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {activeTab === "config" && config && (
+          <section>
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+              <Edit3 size={18} style={{ color: "var(--accent)" }} />
+              Configurações Globais
+            </h2>
+            
+            <div className="card p-6 flex flex-col gap-6">
+              <h3 className="text-md font-medium border-b pb-2" style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}>
+                Perfil e Currículo (URLs)
+              </h3>
+              <Field
+                label="URL da Foto de Perfil (Avatar)"
+                value={config.avatarUrl}
+                onChange={(v) => updateConfig("avatarUrl", v)}
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Field
+                  label="URL do Currículo (PT)"
+                  value={config.cvPtUrl}
+                  onChange={(v) => updateConfig("cvPtUrl", v)}
+                />
+                <Field
+                  label="URL do Currículo (EN)"
+                  value={config.cvEnUrl}
+                  onChange={(v) => updateConfig("cvEnUrl", v)}
+                />
               </div>
-            ))}
-          </div>
-        </section>
+
+              <h3 className="text-md font-medium border-b pb-2 mt-4" style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}>
+                Redes Sociais e Contato
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Field
+                  label="GitHub URL"
+                  value={config.social.github}
+                  onChange={(v) => updateSocial("github", v)}
+                />
+                <Field
+                  label="LinkedIn URL"
+                  value={config.social.linkedin}
+                  onChange={(v) => updateSocial("linkedin", v)}
+                />
+                <Field
+                  label="Instagram URL"
+                  value={config.social.instagram}
+                  onChange={(v) => updateSocial("instagram", v)}
+                />
+                <Field
+                  label="WhatsApp URL"
+                  value={config.social.whatsapp}
+                  onChange={(v) => updateSocial("whatsapp", v)}
+                />
+                <Field
+                  label="Email (mailto:)"
+                  value={config.social.email}
+                  onChange={(v) => updateSocial("email", v)}
+                />
+              </div>
+
+              <button
+                onClick={saveConfig}
+                disabled={savingConfig}
+                className="btn-primary self-start mt-4"
+              >
+                {configSaved ? <Check size={14} /> : <Save size={14} />}
+                {configSaved ? "Salvo!" : savingConfig ? "Salvando..." : "Salvar Configurações"}
+              </button>
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

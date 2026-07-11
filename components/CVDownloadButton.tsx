@@ -3,14 +3,14 @@
 import { useState, useRef, useEffect } from "react";
 import { Download, ChevronDown, FileText } from "lucide-react";
 
-export default function CVDownloadButton() {
-  const [open, setOpen] = useState(false);
+export default function CVDownloadButton({ config }: { config: any }) {
+  const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
+        setIsOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
@@ -21,7 +21,7 @@ export default function CVDownloadButton() {
     <div className="relative" ref={ref}>
       <button
         id="cv-download-btn"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => setIsOpen((o) => !o)}
         className="btn-primary"
       >
         <Download size={16} />
@@ -30,12 +30,12 @@ export default function CVDownloadButton() {
           size={14}
           style={{
             transition: "transform 200ms ease",
-            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
           }}
         />
       </button>
 
-      {open && (
+      {isOpen && (
         <div
           className="absolute left-0 mt-2 rounded-xl overflow-hidden z-50"
           style={{
@@ -54,9 +54,10 @@ export default function CVDownloadButton() {
           `}</style>
 
           <a
-            href="/cv-pt.pdf"
-            download="Adrian_Lopes_CV_PT.pdf"
-            onClick={() => setOpen(false)}
+            href={config.cvPtUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors duration-150"
             style={{ color: "var(--text-primary)", textDecoration: "none", fontSize: "0.875rem" }}
           >
@@ -71,9 +72,10 @@ export default function CVDownloadButton() {
           <div style={{ height: "1px", background: "var(--border)" }} />
 
           <a
-            href="/cv-en.pdf"
-            download="Adrian_Lopes_CV_EN.pdf"
-            onClick={() => setOpen(false)}
+            href={config.cvEnUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors duration-150"
             style={{ color: "var(--text-primary)", textDecoration: "none", fontSize: "0.875rem" }}
           >

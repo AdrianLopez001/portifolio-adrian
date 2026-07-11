@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import { GitBranch, Code2, BarChart3 } from "lucide-react";
+import { Code2, GitBranch } from "lucide-react";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
-import LanguageChart from "@/components/LanguageChart";
 import ThemeToggle from "@/components/ThemeToggle";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -22,11 +21,25 @@ interface Project {
   stack: string[];
 }
 
-interface ClientPageProps {
-  projects: Project[];
+interface Config {
+  avatarUrl: string;
+  cvPtUrl: string;
+  cvEnUrl: string;
+  social: {
+    github: string;
+    linkedin: string;
+    whatsapp: string;
+    email: string;
+    instagram: string;
+  };
 }
 
-export default function ClientPage({ projects }: ClientPageProps) {
+interface ClientPageProps {
+  projects: Project[];
+  config: Config;
+}
+
+export default function ClientPage({ projects, config }: ClientPageProps) {
   // Track unique visits (session-based, no cookies)
   useEffect(() => {
     if (!sessionStorage.getItem("visited")) {
@@ -86,7 +99,7 @@ export default function ClientPage({ projects }: ClientPageProps) {
       {/* ── Main ── */}
       <main>
         {/* Hero */}
-        <Hero />
+        <Hero config={config} />
 
         {/* Projects */}
         <section
@@ -114,33 +127,6 @@ export default function ClientPage({ projects }: ClientPageProps) {
           </div>
         </section>
 
-        {/* Language Chart */}
-        <section
-          id="linguagens"
-          className="px-6 py-20"
-          style={{
-            background: "var(--bg-card)",
-            borderTop: "1px solid var(--border)",
-            borderBottom: "1px solid var(--border)",
-          }}
-        >
-          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-            <div className="mb-8">
-              <div className="section-label flex items-center gap-2 mb-3">
-                <BarChart3 size={12} />
-                Perfil de linguagens
-              </div>
-              <h2 className="text-3xl font-bold" style={{ color: "var(--text-primary)" }}>
-                Stack em números reais
-              </h2>
-              <p className="mt-2 text-base" style={{ color: "var(--text-secondary)" }}>
-                Distribuição real de bytes de código nos projetos públicos do GitHub.
-              </p>
-            </div>
-            <LanguageChart />
-          </div>
-        </section>
-
         {/* Contact Footer */}
         <section className="px-6 py-20" style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <div className="text-center">
@@ -154,10 +140,10 @@ export default function ClientPage({ projects }: ClientPageProps) {
               Aberto a oportunidades remotas, freelas e projetos técnicos desafiadores.
             </p>
             <div className="flex justify-center mb-8">
-              <SocialLinks showLabel={true} />
+              <SocialLinks social={config.social} showLabel={true} />
             </div>
             <a
-              href="https://wa.me/5584986126488?text=Olá%20Adrian%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!"
+              href={config.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mx-auto"
@@ -181,7 +167,7 @@ export default function ClientPage({ projects }: ClientPageProps) {
           <span>© 2025 Adrian Lopes.</span>
           <span>·</span>
           <a
-            href="https://github.com/AdrianLopez001"
+            href={config.social.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 hover:opacity-75 transition-opacity"
