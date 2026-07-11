@@ -110,12 +110,7 @@ export default function Hero({ config }: { config: Config }) {
           </h2>
 
           <p className="text-base leading-relaxed mb-8 mx-auto" style={{ color: "var(--text-secondary)", maxWidth: "660px" }}>
-            {t("hero.bio")}{" "}
-            <strong style={{ color: "var(--text-primary)" }}>{t("hero.backendJr")}</strong> {t("hero.or")}{" "}
-            <strong style={{ color: "var(--text-primary)" }}>{t("hero.fullstackJr")}</strong>{t("hero.bioMiddle")}{" "}
-            <strong style={{ color: "var(--text-primary)" }}>Java &amp; Spring Boot</strong>{" "}
-            {t("hero.bioPython")}{" "}
-            <strong style={{ color: "var(--text-primary)" }}>Python (RAG, Machine Learning)</strong>{t("hero.bioEnd")}
+            {t("hero.description")}
           </p>
 
           {/* CTAs */}

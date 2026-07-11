@@ -8,15 +8,8 @@ export const translations = {
 
     // Hero
     "hero.available": "Disponível para oportunidades",
-    "hero.role": "Software Engineer",
-    "hero.bio": "Estudante de ADS buscando minha primeira oportunidade como",
-    "hero.backendJr": "Desenvolvedor Backend Júnior",
-    "hero.or": "ou",
-    "hero.fullstackJr": "Full-Stack Júnior",
-    "hero.bioMiddle": ". Desenvolvo sistemas escaláveis com",
-    "hero.bioPython": "e integro inteligência artificial utilizando",
-    "hero.bioEnd":
-      ". Tenho facilidade com trabalho remoto, aprendo rápido e sou motivado a resolver problemas reais.",
+    "hero.role": "Software Developer",
+    "hero.description": "Graduando em ADS e buscando minha primeira oportunidade como Desenvolvedor Backend ou Full-Stack. Desenvolvo sistemas escaláveis com Java & Spring Boot e integro inteligência artificial utilizando Python (RAG, Machine Learning). Tenho facilidade com trabalho remoto, aprendo rápido e sou motivado a resolver problemas reais.",
     "hero.downloadCv": "Baixar Currículo",
     "hero.viewProjects": "Ver Projetos",
     "hero.interests": "Interesses:",
@@ -79,15 +72,8 @@ export const translations = {
 
     // Hero
     "hero.available": "Available for opportunities",
-    "hero.role": "Software Engineer",
-    "hero.bio": "ADS student seeking my first opportunity as a",
-    "hero.backendJr": "Junior Backend Developer",
-    "hero.or": "or",
-    "hero.fullstackJr": "Junior Full-Stack Developer",
-    "hero.bioMiddle": ". I build scalable systems with",
-    "hero.bioPython": "and integrate artificial intelligence using",
-    "hero.bioEnd":
-      ". I adapt well to remote work, learn fast, and am driven to solve real-world problems.",
+    "hero.role": "Software Developer",
+    "hero.description": "ADS undergraduate seeking my first opportunity as a Backend or Full-Stack Developer. I develop scalable systems with Java & Spring Boot and integrate artificial intelligence using Python (RAG, Machine Learning). I adapt well to remote work, learn fast, and am driven to solve real-world problems.",
     "hero.downloadCv": "Download Resume",
     "hero.viewProjects": "View Projects",
     "hero.interests": "Interests:",

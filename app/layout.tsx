@@ -10,12 +10,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Adrian Lopes — Software Engineer",
+  title: "Adrian Lopes — Software Developer",
   description:
-    "Portfólio de Adrian Lopes, Software Engineer especializado em Java, Spring Boot, Python e AI (RAG, Machine Learning). Desenvolvendo sistemas backend escaláveis em Natal, RN.",
+    "Portfólio de Adrian Lopes, Software Developer especializado em Java, Spring Boot, Python e AI (RAG, Machine Learning). Desenvolvendo sistemas backend escaláveis em Natal, RN.",
   keywords: [
     "Adrian Lopes",
-    "Software Engineer",
+    "Software Developer",
     "Java",
     "Spring Boot",
     "Python",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
       : "https://portfolio-adrian.vercel.app"
   ),
   openGraph: {
-    title: "Adrian Lopes — Software Engineer",
+    title: "Adrian Lopes — Software Developer",
     description:
-      "Software Engineer | Java & Spring Boot | Python & AI — Building scalable backend systems",
+      "Software Developer | Java & Spring Boot | Python & AI — Building scalable backend systems",
     type: "website",
     locale: "pt_BR",
     url: "/",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Adrian Lopes — Software Engineer",
-    description: "Software Engineer | Java & Spring Boot | Python & AI",
+    title: "Adrian Lopes — Software Developer",
+    description: "Software Developer | Java & Spring Boot | Python & AI",
     images: ["/avatar.jpg"],
   },
   robots: {
