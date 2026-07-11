@@ -160,22 +160,6 @@ export default function Hero({ config }: { config: any }) {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
-        style={{ opacity: 0.5 }}
-      >
-        <span className="text-xs" style={{ color: "var(--text-muted)" }}>
-          scroll
-        </span>
-        <div
-          className="w-0.5 h-8 rounded-full"
-          style={{
-            background: "linear-gradient(to bottom, var(--accent), transparent)",
-            animation: "pulse 2s ease-in-out infinite",
-          }}
-        />
-      </div>
     </section>
   );
 }
