@@ -55,7 +55,7 @@ export default function SocialLinks({ social, size = "md", showLabel = false }: 
       icon: <MessageCircle size={20} />,
     },
     {
-      href: social.email,
+      href: social.email.startsWith("mailto:") ? social.email : `mailto:${social.email}`,
       label: "E-mail",
       icon: <Mail size={20} />,
     },
