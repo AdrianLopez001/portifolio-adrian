@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-inter: 'Inter', sans-serif;
+    --bg-main: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f3f4;
+    --accent: #1a73e8;
+    --accent-hover: #1557b0;
+    --accent-glow: rgba(26, 115, 232, 0.15);
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --text-muted: #9aa0a6;
+    --border: #dadce0;
+    --border-card: #e8eaed;
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .dark {
+    --bg-main: #202124;
+    --bg-card: #2d2f33;
+    --bg-card-hover: #35373b;
+    --accent: #4d90fe;
+    --accent-hover: #6ea7fe;
+    --accent-glow: rgba(77, 144, 254, 0.18);
+    --text-primary: #e8eaed;
+    --text-secondary: #bdc1c6;
+    --text-muted: #9aa0a6;
+    --border: #3c4043;
+    --border-card: #3c4043;
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-card-hover: 0 4px 24px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    background: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  ::selection {
+    background: var(--accent-glow);
+    color: var(--accent);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-main);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 200ms ease, transform 150ms ease, box-shadow 200ms ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    border: 1.5px solid var(--accent);
+    cursor: pointer;
+    transition: background 200ms ease, transform 150ms ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-ghost:hover {
+    background: var(--accent-glow);
+    transform: translateY(-1px);
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 200ms ease, border-color 200ms ease, transform 200ms ease;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--accent);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    background: var(--accent-glow);
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }

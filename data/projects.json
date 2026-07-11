@@ -1,0 +1,69 @@
+{
+  "projects": [
+    {
+      "id": "corporate-rag-engine",
+      "repo": "Corporate-RAG-Engine",
+      "title": "Corporate RAG Engine",
+      "shortDescription": "Motor de busca semântica corporativa com RAG e embeddings em Java.",
+      "language": "Java",
+      "languageColor": "#b07219",
+      "demoUrl": "https://corporate-rag-engine.vercel.app",
+      "githubUrl": "https://github.com/AdrianLopez001/Corporate-RAG-Engine",
+      "problem": "Empresas acumulam gigabytes de documentos internos (PDFs, relatórios, manuais) que se tornam inacessíveis. Funcionários perdem horas buscando informação que já existe, e a tomada de decisão é prejudicada pela ausência de contexto.",
+      "contribution": "Arquitetei e implementei do zero o pipeline completo de RAG (Retrieval-Augmented Generation) em Java/Spring Boot. Integrei a geração de embeddings vetoriais com armazenamento em banco de dados vetorial, construí a camada de recuperação semântica com re-ranking por relevância e conectei ao LLM para síntese de respostas contextuais. Toda a ingestão de documentos foi automatizada via processamento assíncrono com filas.",
+      "stack": ["Java 17", "Spring Boot 3.2", "Spring AI", "PostgreSQL + pgvector", "OpenAI API", "Docker", "Maven"]
+    },
+    {
+      "id": "fintrack-system",
+      "repo": "FINTRACK-SYSTEM",
+      "title": "FINTRACK System",
+      "shortDescription": "Sistema de gestão financeira com leitura inteligente de PDFs para oficinas.",
+      "language": "Python",
+      "languageColor": "#3572A5",
+      "demoUrl": "https://frontend-beta-six-41.vercel.app",
+      "githubUrl": "https://github.com/AdrianLopez001/FINTRACK-SYSTEM",
+      "problem": "Oficinas mecânicas de médio porte não possuem sistemas acessíveis para rastrear faturamento, metas e desempenho diário. O controle é feito em planilhas manuais desconectadas da realidade operacional.",
+      "contribution": "Desenvolvi um sistema completo de auditoria financeira que faz parsing automático de relatórios PDF via regex, categorizando cada linha em Receita ou Despesa com base em padrões configuráveis. Implementei o dashboard de performance com gráfico de faturamento diário vs meta, cálculo de ticket médio e breakdown semanal. Adicionei um módulo CRM de disparo WhatsApp com templating de mensagens e catálogo de peças por placa de veículo.",
+      "stack": ["Python", "Streamlit", "pdfplumber", "PostgreSQL", "psycopg2", "React", "Vite", "Framer Motion"]
+    },
+    {
+      "id": "caresync",
+      "repo": "CareSync",
+      "title": "CareSync — Gestão Médica",
+      "shortDescription": "Plataforma de gestão médica integrada com foco em segurança de dados clínicos.",
+      "language": "Java",
+      "languageColor": "#b07219",
+      "demoUrl": "https://care-sync-orcin.vercel.app",
+      "githubUrl": "https://github.com/AdrianLopez001/CareSync",
+      "problem": "Clínicas e consultórios médicos dependem de sistemas legados caros e inflexíveis para agendamentos e prontuários. A integração entre módulos (agenda, prontuário, faturamento) é inexistente, gerando retrabalho e risco de erros clínicos.",
+      "contribution": "Projetei a arquitetura de microserviços com Spring Boot, implementando módulos independentes para agendamento, prontuário eletrônico e gestão de pacientes. Garanti a segurança dos dados clínicos com Spring Security, JWT e controle de acesso baseado em papéis (RBAC). Implementei comunicação assíncrona entre serviços via eventos e integrei com banco de dados relacional com migrações versionadas.",
+      "stack": ["Java 17", "Spring Boot 3.2", "Spring Security", "JWT", "PostgreSQL", "Flyway", "Docker", "Microservices"]
+    },
+    {
+      "id": "system-lumiar",
+      "repo": "System-lumiar",
+      "title": "System Lumiar",
+      "shortDescription": "Plataforma beneficente em Next.js para gestão de voluntários e campanhas sociais.",
+      "language": "TypeScript",
+      "languageColor": "#2b7489",
+      "demoUrl": "https://system-lumiar.vercel.app",
+      "githubUrl": "https://github.com/AdrianLopez001/System-lumiar",
+      "problem": "Organizações beneficentes não possuem ferramentas acessíveis para coordenar voluntários, divulgar campanhas e receber doações online. A comunicação é dispersa em grupos de WhatsApp sem rastreabilidade.",
+      "contribution": "Construí a plataforma completa com Next.js 14 e TypeScript, implementando autenticação segura, painel de gestão de voluntários com controle de presença, módulo de campanhas com meta de arrecadação em tempo real e integração com gateway de pagamento. Todo o front-end foi desenvolvido com foco em acessibilidade (WCAG AA) e performance, atingindo pontuação 100 no Lighthouse.",
+      "stack": ["Next.js 14", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma ORM", "NextAuth.js", "Vercel"]
+    },
+    {
+      "id": "now-or-never",
+      "repo": "Now-or-Never",
+      "title": "Now or Never — IA Preditiva",
+      "shortDescription": "Plataforma de inteligência preditiva para futebol com Ensemble de 3 modelos de ML e explicabilidade SHAP.",
+      "language": "Python",
+      "languageColor": "#3572A5",
+      "demoUrl": "https://now-or-never-seven.vercel.app",
+      "githubUrl": "https://github.com/AdrianLopez001/Now-or-Never",
+      "problem": "Analistas esportivos e entusiastas de futebol carecem de ferramentas que combinem dados históricos reais com modelos preditivos explicáveis — a maioria das soluções existentes são caixas-pretas sem transparência sobre as razões das previsões.",
+      "contribution": "Desenvolvi um sistema de ensemble com 3 modelos de Machine Learning (Random Forest, XGBoost e Regressão Logística) com votação ponderada por performance histórica. Integrei a biblioteca SHAP para gerar explicabilidade visual de cada previsão — mostrando exatamente quais variáveis (forma recente, confronto direto, mandante/visitante) mais influenciaram o resultado. Implementei pipeline de dados com web scraping e feature engineering automático.",
+      "stack": ["Python", "scikit-learn", "XGBoost", "SHAP", "pandas", "NumPy", "React", "FastAPI", "Vercel"]
+    }
+  ]
+}
