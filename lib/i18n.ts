@@ -9,7 +9,7 @@ export const translations = {
     // Hero
     "hero.available": "Disponível para oportunidades",
     "hero.role": "Software Developer",
-    "hero.description": "Graduando em ADS e buscando minha primeira oportunidade como Desenvolvedor Backend ou Full-Stack. Desenvolvo sistemas escaláveis com Java & Spring Boot e integro inteligência artificial utilizando Python (RAG, Machine Learning). Tenho facilidade com trabalho remoto, aprendo rápido e sou motivado a resolver problemas reais.",
+    "hero.description": "Graduando em ADS e buscando minha primeira oportunidade como Desenvolvedor Backend ou Full-Stack. Tenho facilidade com trabalho remoto, aprendo rápido e sou motivado a resolver problemas reais.",
     "hero.downloadCv": "Baixar Currículo",
     "hero.viewProjects": "Ver Projetos",
     "hero.interests": "Interesses:",
@@ -22,13 +22,13 @@ export const translations = {
     "skill.data.label": "Dados",
     "skill.data.desc": "PostgreSQL, pgvector",
     "skill.frontend.label": "Full-Stack",
-    "skill.frontend.desc": "React, Node.js, JavaScript, HTML/CSS",
+    "skill.frontend.desc": "",
 
     // Interest tags
     "interest.1": "Backend",
-    "interest.2": "RAG & LLMs",
-    "interest.3": "Microservices",
-    "interest.4": "Testes (JUnit/Mockito)",
+    "interest.2": "",
+    "interest.3": "",
+    "interest.4": "",
     "interest.5": "Trabalho Remoto",
 
     // Projects section
@@ -79,20 +79,20 @@ export const translations = {
     "hero.interests": "Interests:",
 
     // Skills
-    "skill.java.label": "Java & Spring Boot",
-    "skill.java.desc": "Microservices, Spring AI, JPA, JWT, RabbitMQ",
+    "skill.java.label": "Java",
+    "skill.java.desc": "",
     "skill.python.label": "Python & AI",
-    "skill.python.desc": "RAG, OpenAI API, Machine Learning, SHAP values",
-    "skill.data.label": "Data & Infra",
-    "skill.data.desc": "PostgreSQL, pgvector, GitHub Actions",
-    "skill.frontend.label": "Frontend & Full-Stack",
-    "skill.frontend.desc": "Next.js 15, React, Node.js, JavaScript, HTML/CSS",
+    "skill.python.desc": "",
+    "skill.data.label": "Data",
+    "skill.data.desc": "",
+    "skill.frontend.label": "Full-Stack",
+    "skill.frontend.desc": "",
 
     // Interest tags
-    "interest.1": "Backend Jr",
-    "interest.2": "RAG & LLMs",
-    "interest.3": "Microservices",
-    "interest.4": "Testing (JUnit/Mockito)",
+    "interest.1": "Backend",
+    "interest.2": "",
+    "interest.3": "q",
+    "interest.4": "",
     "interest.5": "Remote Work",
 
     // Projects section
