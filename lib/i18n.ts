@@ -15,17 +15,17 @@ export const translations = {
     "hero.interests": "Interesses:",
 
     // Skills
-    "skill.java.label": "Java & Spring Boot",
-    "skill.java.desc": "Microsserviços, Spring AI, JPA, JWT, RabbitMQ",
+    "skill.java.label": "Java",
+    "skill.java.desc": "Microsserviços",
     "skill.python.label": "Python & AI",
-    "skill.python.desc": "RAG, OpenAI API, Machine Learning, SHAP values",
-    "skill.data.label": "Dados & Infra",
-    "skill.data.desc": "PostgreSQL, pgvector, GitHub Actions",
-    "skill.frontend.label": "Frontend & Full-Stack",
-    "skill.frontend.desc": "Next.js 15, React, Node.js, JavaScript, HTML/CSS",
+    "skill.python.desc": "RAG, OpenAI API, Machine Learning",
+    "skill.data.label": "Dados",
+    "skill.data.desc": "PostgreSQL, pgvector",
+    "skill.frontend.label": "Full-Stack",
+    "skill.frontend.desc": "React, Node.js, JavaScript, HTML/CSS",
 
     // Interest tags
-    "interest.1": "Backend Jr",
+    "interest.1": "Backend",
     "interest.2": "RAG & LLMs",
     "interest.3": "Microservices",
     "interest.4": "Testes (JUnit/Mockito)",
