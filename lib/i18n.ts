@@ -16,19 +16,19 @@ export const translations = {
 
     // Skills
     "skill.java.label": "Java",
-    "skill.java.desc": "Microsserviços",
+    "skill.java.desc": "",
     "skill.python.label": "Python & AI",
-    "skill.python.desc": "RAG, OpenAI API, Machine Learning",
+    "skill.python.desc": "",
     "skill.data.label": "Dados",
-    "skill.data.desc": "PostgreSQL, pgvector",
+    "skill.data.desc": "",
     "skill.frontend.label": "Full-Stack",
     "skill.frontend.desc": "",
 
     // Interest tags
     "interest.1": "Backend",
-    "interest.2": "",
-    "interest.3": "",
-    "interest.4": "",
+    "interest.2": "Java",
+    "interest.3": "Full Stack",
+    "interest.4": "Estagio",
     "interest.5": "Trabalho Remoto",
 
     // Projects section
@@ -73,7 +73,7 @@ export const translations = {
     // Hero
     "hero.available": "Available for opportunities",
     "hero.role": "Software Developer",
-    "hero.description": "ADS undergraduate seeking my first opportunity as a Backend or Full-Stack Developer. I develop scalable systems with Java & Spring Boot and integrate artificial intelligence using Python (RAG, Machine Learning). I adapt well to remote work, learn fast, and am driven to solve real-world problems.",
+    "hero.description": "Currently pursuing a degree in Systems Analysis and Development (ADS) and seeking my first opportunity as a Backend or Full-Stack Developer. I am comfortable working remotely, a quick learner, and motivated to solve real-world problems.",
     "hero.downloadCv": "Download Resume",
     "hero.viewProjects": "View Projects",
     "hero.interests": "Interests:",
@@ -90,9 +90,9 @@ export const translations = {
 
     // Interest tags
     "interest.1": "Backend",
-    "interest.2": "",
-    "interest.3": "q",
-    "interest.4": "",
+    "interest.2": "Java",
+    "interest.3": "Full Stack",
+    "interest.4": "Estagio",
     "interest.5": "Remote Work",
 
     // Projects section
