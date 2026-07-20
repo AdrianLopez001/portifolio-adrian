@@ -5,11 +5,13 @@ import Image from "next/image";
 import { MapPin, Briefcase, Code2, Brain, ChevronRight } from "lucide-react";
 import SocialLinks from "./SocialLinks";
 import CVDownloadButton from "./CVDownloadButton";
+import CVModal from "./CVModal";
 import { useI18n } from "./I18nProvider";
 import type { Config } from "@/lib/data";
 
 export default function Hero({ config }: { config: Config }) {
   const [visible, setVisible] = useState(false);
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
   const { t } = useI18n();
 
   useEffect(() => {
@@ -115,7 +117,7 @@ export default function Hero({ config }: { config: Config }) {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-            <CVDownloadButton config={config} />
+            <CVDownloadButton config={config} onOpenModal={() => setIsCvModalOpen(true)} />
             <a
               href="#projetos"
               className="btn-ghost"
@@ -165,6 +167,12 @@ export default function Hero({ config }: { config: Config }) {
         </div>
       </div>
 
+      {/* CV Viewer Modal */}
+      <CVModal
+        isOpen={isCvModalOpen}
+        onClose={() => setIsCvModalOpen(false)}
+        config={config}
+      />
     </section>
   );
 }

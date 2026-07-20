@@ -8,32 +8,33 @@ export const translations = {
 
     // Hero
     "hero.available": "Disponível para oportunidades",
-    "hero.role": "Software Developer",
-    "hero.description": "Graduando em ADS e buscando minha primeira oportunidade como Desenvolvedor Backend ou Full-Stack. Tenho facilidade com trabalho remoto, aprendo rápido e sou motivado a resolver problemas reais.",
+    "hero.role": "Desenvolvedor Backend",
+    "hero.description": "Desenvolvedor Backend com experiência prática em automação e integração de sistemas (WhatsApp, estoque, dados financeiros), atuando atualmente na Cartec Bosch. Aprofundando conhecimentos em Spring Boot, PostgreSQL e JWT.",
+    "hero.viewCv": "Visualizar Currículo",
     "hero.downloadCv": "Baixar Currículo",
     "hero.viewProjects": "Ver Projetos",
     "hero.interests": "Interesses:",
 
     // Skills
-    "skill.java.label": "Java",
-    "skill.java.desc": "",
-    "skill.python.label": "Python & AI",
-    "skill.python.desc": "",
-    "skill.data.label": "Dados",
-    "skill.data.desc": "",
-    "skill.frontend.label": "Full-Stack",
-    "skill.frontend.desc": "",
+    "skill.java.label": "Spring Boot & Java",
+    "skill.java.desc": "APIs REST, JWT & JPA",
+    "skill.python.label": "Python & IA",
+    "skill.python.desc": "Agentes de IA & ML",
+    "skill.data.label": "PostgreSQL & Dados",
+    "skill.data.desc": "Modelagem & Integrações",
+    "skill.frontend.label": "Automações & Web",
+    "skill.frontend.desc": "WhatsApp & Webhooks",
 
     // Interest tags
     "interest.1": "Backend",
-    "interest.2": "Java",
-    "interest.3": "Full Stack",
-    "interest.4": "Estagio",
+    "interest.2": "Spring Boot",
+    "interest.3": "PostgreSQL",
+    "interest.4": "Agentes IA",
     "interest.5": "Trabalho Remoto",
 
     // Projects section
     "projects.label": "Projetos selecionados",
-    "projects.title": "{count} sistemas em produção",
+    "projects.title": "{count} sistemas em destaque",
     "projects.subtitle":
       "Clique em qualquer card para expandir e ver detalhes técnicos completos.",
 
@@ -54,12 +55,17 @@ export const translations = {
     // Footer
     "footer.copy": "Adrian Lopes.",
 
-    // CV Dropdown
+    // CV Modal & Dropdown
+    "cv.title": "Currículo — Adrian Gonçalves Lopes",
     "cv.pt": "Português",
-    "cv.ptDesc": "Currículo Adrian",
+    "cv.ptDesc": "Currículo em Português",
     "cv.en": "English",
-    "cv.enDesc": "Currículo Adrian",
-    "cv.menuLabel": "Opções de download do currículo",
+    "cv.enDesc": "Resume in English",
+    "cv.menuLabel": "Opções de currículo",
+    "cv.viewModal": "Visualizar na Tela",
+    "cv.viewModalDesc": "Abre o currículo interativo com abas PT/EN",
+    "cv.print": "Imprimir / PDF",
+    "cv.close": "Fechar",
 
     // Language toggle
     "lang.toggle": "EN",
@@ -72,32 +78,33 @@ export const translations = {
 
     // Hero
     "hero.available": "Available for opportunities",
-    "hero.role": "Software Developer",
-    "hero.description": "Currently pursuing a degree in Systems Analysis and Development (ADS) and seeking my first opportunity as a Backend or Full-Stack Developer. I am comfortable working remotely, a quick learner, and motivated to solve real-world problems.",
+    "hero.role": "Backend Developer",
+    "hero.description": "Backend Developer with hands-on experience in automation and systems integration (WhatsApp, inventory, financial data), currently working at Cartec Bosch. Deepening knowledge in Spring Boot, PostgreSQL, and JWT.",
+    "hero.viewCv": "View Resume",
     "hero.downloadCv": "Download Resume",
     "hero.viewProjects": "View Projects",
     "hero.interests": "Interests:",
 
     // Skills
-    "skill.java.label": "Java",
-    "skill.java.desc": "",
+    "skill.java.label": "Spring Boot & Java",
+    "skill.java.desc": "REST APIs, JWT & JPA",
     "skill.python.label": "Python & AI",
-    "skill.python.desc": "",
-    "skill.data.label": "Data",
-    "skill.data.desc": "",
-    "skill.frontend.label": "Full-Stack",
-    "skill.frontend.desc": "",
+    "skill.python.desc": "AI Agents & ML",
+    "skill.data.label": "PostgreSQL & Data",
+    "skill.data.desc": "Modeling & Integrations",
+    "skill.frontend.label": "Automations & Web",
+    "skill.frontend.desc": "WhatsApp & Webhooks",
 
     // Interest tags
     "interest.1": "Backend",
-    "interest.2": "Java",
-    "interest.3": "Full Stack",
-    "interest.4": "Estagio",
+    "interest.2": "Spring Boot",
+    "interest.3": "PostgreSQL",
+    "interest.4": "AI Agents",
     "interest.5": "Remote Work",
 
     // Projects section
     "projects.label": "Selected projects",
-    "projects.title": "{count} systems in production",
+    "projects.title": "{count} featured systems",
     "projects.subtitle":
       "Click any card to expand and see full technical details.",
 
@@ -118,12 +125,17 @@ export const translations = {
     // Footer
     "footer.copy": "Adrian Lopes.",
 
-    // CV Dropdown
-    "cv.pt": "Português",
-    "cv.ptDesc": "Currículo Adrian",
+    // CV Modal & Dropdown
+    "cv.title": "Resume — Adrian Gonçalves Lopes",
+    "cv.pt": "Portuguese",
+    "cv.ptDesc": "Resume in Portuguese",
     "cv.en": "English",
-    "cv.enDesc": "Currículo Adrian",
-    "cv.menuLabel": "Resume download options",
+    "cv.enDesc": "Resume in English",
+    "cv.menuLabel": "Resume options",
+    "cv.viewModal": "View on Screen",
+    "cv.viewModalDesc": "Open interactive resume with PT/EN tabs",
+    "cv.print": "Print / PDF",
+    "cv.close": "Close",
 
     // Language toggle
     "lang.toggle": "PT",

@@ -1,44 +1,43 @@
 {
   "projects": [
     {
-      "id": "corporate-rag-engine",
-      "repo": "Corporate-RAG-Engine",
-      "title": "Corporate RAG Engine",
-      "shortDescription": "Motor de busca semântica corporativa com RAG e embeddings em Java.",
-      "language": "Java",
-      "languageColor": "#b07219",
-      "demoUrl": "https://corporate-rag-engine.vercel.app",
-      "githubUrl": "https://github.com/AdrianLopez001/Corporate-RAG-Engine",
-      "problem": "Empresas acumulam gigabytes de documentos internos (PDFs, relatórios, manuais) que se tornam inacessíveis. Funcionários perdem horas buscando informação que já existe, e a tomada de decisão é prejudicada pela ausência de contexto.",
-      "contribution": "Construí o backend de RAG (Retrieval-Augmented Generation) de nível corporativo utilizando o stack mais moderno de IA no Java. O pipeline inclui a extração de texto via Apache Tika, geração de embeddings contextuais, persistência em banco vetorial com indexação HNSW e pipeline de CI com testes automatizados via Mockito.",
-      "stack": ["Java 21", "Spring Boot 3.3", "Spring AI", "GPT-4o-mini", "PostgreSQL + pgvector", "Docker", "Apache Tika", "GitHub Actions", "Mockito"]
-    },
-    
-    {
-      "id": "system-lumiar",
-      "repo": "System-lumiar",
-      "title": "System Lumiar",
-      "shortDescription": "Plataforma beneficente em Next.js para gestão de voluntários e campanhas sociais.",
-      "language": "TypeScript",
-      "languageColor": "#2b7489",
-      "demoUrl": "https://system-lumiar.vercel.app",
-      "githubUrl": "https://github.com/AdrianLopez001/System-lumiar",
-      "problem": "Organizações beneficentes não possuem ferramentas acessíveis para coordenar voluntários, divulgar campanhas e receber doações online. A comunicação é dispersa em grupos de WhatsApp sem rastreabilidade.",
-      "contribution": "Construí a plataforma completa com Next.js 14 e TypeScript, implementando autenticação segura, painel de gestão de voluntários com controle de presença, módulo de campanhas com meta de arrecadação em tempo real e integração com gateway de pagamento. Todo o front-end foi desenvolvido com foco em acessibilidade (WCAG AA) e performance, atingindo pontuação 100 no Lighthouse.",
-      "stack": ["Next.js 14", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma ORM", "NextAuth.js", "Vercel"]
-    },
-    {
-      "id": "now-or-never",
+      "id": "matchmind-ai",
       "repo": "Now-or-Never",
-      "title": "Now or Never — IA Preditiva",
-      "shortDescription": "Plataforma de inteligência preditiva para futebol com Ensemble de 3 modelos de ML e explicabilidade SHAP.",
-      "language": "Python",
+      "title": "MatchMind AI",
+      "shortDescription": "Previsão de resultados de futebol com ML (Python) + API Java/Spring Boot.",
+      "language": "Python / Java",
       "languageColor": "#3572A5",
       "demoUrl": "https://now-or-never-seven.vercel.app",
       "githubUrl": "https://github.com/AdrianLopez001/Now-or-Never",
-      "problem": "Analistas esportivos e entusiastas de futebol carecem de ferramentas que combinem dados históricos reais com modelos preditivos explicáveis — a maioria das soluções existentes são caixas-pretas sem transparência sobre as razões das previsões.",
-      "contribution": "Desenvolvi um sistema de ensemble com 3 modelos de Machine Learning (Random Forest, XGBoost e Regressão Logística) com votação ponderada por performance histórica. Integrei a biblioteca SHAP para gerar explicabilidade visual de cada previsão — mostrando exatamente quais variáveis (forma recente, confronto direto, mandante/visitante) mais influenciaram o resultado. Implementei pipeline de dados com web scraping e feature engineering automático.",
-      "stack": ["Python", "scikit-learn", "XGBoost", "SHAP", "pandas", "NumPy", "React", "FastAPI", "Vercel"]
+      "problem": "Analistas e entusiastas esportivos carecem de previsões transparentes e baseadas em dados combinando inteligência artificial em Python e APIs de alta performance em Java.",
+      "contribution": "Desenvolvi a inteligência preditiva usando modelos de Machine Learning em Python e integrei a uma API robusta em Java / Spring Boot para disponibilizar os resultados com baixa latência.",
+      "stack": ["Python", "Java", "Spring Boot", "scikit-learn", "FastAPI", "PostgreSQL", "Docker"]
+    },
+    {
+      "id": "dunastech",
+      "repo": "DunasTech",
+      "title": "DunasTech",
+      "shortDescription": "Mapa 3D interativo de Natal (MapLibre GL JS), Hackathon do Sol 2026.",
+      "language": "JavaScript",
+      "languageColor": "#f1e05a",
+      "demoUrl": "https://github.com/AdrianLopez001/DunasTech",
+      "githubUrl": "https://github.com/AdrianLopez001/DunasTech",
+      "problem": "Dificuldade na visualização tridimensional e interativa de dados geoespaciais e turismo na cidade de Natal/RN durante a maratona de desenvolvimento.",
+      "contribution": "Desenvolvi a navegação geoespacial em 3D utilizando MapLibre GL JS, otimizando a renderização de camadas de mapas e integração de pontos turísticos e métricas em tempo real.",
+      "stack": ["MapLibre GL JS", "JavaScript", "HTML5/CSS3", "GeoJSON", "Vite"]
+    },
+    {
+      "id": "caresync",
+      "repo": "CareSync",
+      "title": "CareSync",
+      "shortDescription": "Agendamento de consultas com notificações assíncronas.",
+      "language": "Java",
+      "languageColor": "#b07219",
+      "demoUrl": "https://github.com/AdrianLopez001/CareSync",
+      "githubUrl": "https://github.com/AdrianLopez001/CareSync",
+      "problem": "Sistemas médicos tradicionais sofrem com travamentos e atrasos em confirmação de consultas enviadas de forma síncrona.",
+      "contribution": "Construí o sistema de agendamento em Java/Spring Boot desacoplando o envio de notificações (e-mail e SMS) através de mensageria assíncrona com processamento em segundo plano.",
+      "stack": ["Java 21", "Spring Boot", "PostgreSQL", "Spring AMQP / RabbitMQ", "Docker", "JUnit 5"]
     }
   ]
 }

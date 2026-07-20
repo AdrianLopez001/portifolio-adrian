@@ -1,11 +1,16 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Download, ChevronDown, FileText } from "lucide-react";
+import { Download, ChevronDown, FileText, Eye } from "lucide-react";
 import { useI18n } from "./I18nProvider";
 import type { Config } from "@/lib/data";
 
-export default function CVDownloadButton({ config }: { config: Config }) {
+interface CVDownloadButtonProps {
+  config: Config;
+  onOpenModal: () => void;
+}
+
+export default function CVDownloadButton({ config, onOpenModal }: CVDownloadButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -36,13 +41,13 @@ export default function CVDownloadButton({ config }: { config: Config }) {
         return;
       }
 
-      const items = menuRef.current?.querySelectorAll<HTMLAnchorElement>(
+      const items = menuRef.current?.querySelectorAll<HTMLElement>(
         '[role="menuitem"]'
       );
       if (!items || items.length === 0) return;
 
       const focused = document.activeElement;
-      const currentIndex = Array.from(items).indexOf(focused as HTMLAnchorElement);
+      const currentIndex = Array.from(items).indexOf(focused as HTMLElement);
 
       if (e.key === "ArrowDown") {
         e.preventDefault();
@@ -61,7 +66,7 @@ export default function CVDownloadButton({ config }: { config: Config }) {
   useEffect(() => {
     if (isOpen) {
       requestAnimationFrame(() => {
-        const firstItem = menuRef.current?.querySelector<HTMLAnchorElement>(
+        const firstItem = menuRef.current?.querySelector<HTMLElement>(
           '[role="menuitem"]'
         );
         firstItem?.focus();
@@ -74,13 +79,13 @@ export default function CVDownloadButton({ config }: { config: Config }) {
       <button
         id="cv-download-btn"
         onClick={() => setIsOpen((o) => !o)}
-        className="btn-primary"
+        className="btn-primary flex items-center gap-2"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-controls={isOpen ? menuId : undefined}
       >
-        <Download size={16} />
-        {t("hero.downloadCv")}
+        <Eye size={16} />
+        {t("hero.viewCv")}
         <ChevronDown
           size={14}
           style={{
@@ -96,12 +101,12 @@ export default function CVDownloadButton({ config }: { config: Config }) {
           ref={menuRef}
           role="menu"
           aria-label={t("cv.menuLabel")}
-          className="absolute left-0 mt-2 rounded-xl overflow-hidden z-50"
+          className="absolute left-0 sm:left-auto right-0 mt-2 rounded-2xl overflow-hidden z-50 py-1"
           style={{
             background: "var(--bg-card)",
             border: "1px solid var(--border-card)",
             boxShadow: "var(--shadow-card-hover)",
-            minWidth: "200px",
+            minWidth: "240px",
             animation: "slideDown 150ms ease",
           }}
         >
@@ -112,6 +117,32 @@ export default function CVDownloadButton({ config }: { config: Config }) {
             }
           `}</style>
 
+          {/* View Modal Item */}
+          <button
+            role="menuitem"
+            tabIndex={0}
+            onClick={() => {
+              setIsOpen(false);
+              onOpenModal();
+            }}
+            className="w-full text-left flex items-center gap-3 px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors duration-150 outline-none focus:bg-[var(--bg-card-hover)] cursor-pointer"
+            style={{ color: "var(--text-primary)", fontSize: "0.875rem" }}
+          >
+            <div
+              className="p-1.5 rounded-lg flex items-center justify-center shrink-0"
+              style={{ background: "rgba(99, 102, 241, 0.15)", color: "var(--accent)" }}
+            >
+              <Eye size={16} />
+            </div>
+            <div>
+              <div style={{ fontWeight: 600 }}>{t("cv.viewModal")}</div>
+              <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{t("cv.viewModalDesc")}</div>
+            </div>
+          </button>
+
+          <div style={{ height: "1px", background: "var(--border)", margin: "4px 0" }} />
+
+          {/* Download PT */}
           <a
             href={config.cvPtUrl}
             target="_blank"
@@ -127,11 +158,10 @@ export default function CVDownloadButton({ config }: { config: Config }) {
               <div style={{ fontWeight: 500 }}>{t("cv.pt")}</div>
               <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{t("cv.ptDesc")}</div>
             </div>
-            <FileText size={14} style={{ marginLeft: "auto", color: "var(--text-muted)" }} />
+            <Download size={14} style={{ marginLeft: "auto", color: "var(--text-muted)" }} />
           </a>
 
-          <div style={{ height: "1px", background: "var(--border)" }} />
-
+          {/* Download EN */}
           <a
             href={config.cvEnUrl}
             target="_blank"
@@ -147,7 +177,7 @@ export default function CVDownloadButton({ config }: { config: Config }) {
               <div style={{ fontWeight: 500 }}>{t("cv.en")}</div>
               <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{t("cv.enDesc")}</div>
             </div>
-            <FileText size={14} style={{ marginLeft: "auto", color: "var(--text-muted)" }} />
+            <Download size={14} style={{ marginLeft: "auto", color: "var(--text-muted)" }} />
           </a>
         </div>
       )}
