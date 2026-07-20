@@ -225,8 +225,23 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                   OBJETIVO
                 </h2>
                 <p className="leading-relaxed text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Desenvolvedor Backend com experiência prática em automação e integração de sistemas (WhatsApp, estoque, dados financeiros), atuando atualmente na Cartec Bosch. Aprofundando conhecimentos em Spring Boot, PostgreSQL e JWT.
+                  Desenvolvedor Backend Java/Spring Boot, atuando com APIs REST, integração de sistemas, automação de processos, bancos de dados relacionais e Inteligência Artificial aplicada (Cartec Bosch). Autodidata e orientado a resultados, busco posição remota como Desenvolvedor Backend para expandir conhecimento técnico continuamente e contribuir com soluções escaláveis desde o primeiro dia.
                 </p>
+              </section>
+
+              {/* HABILIDADES TÉCNICAS */}
+              <section>
+                <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
+                  HABILIDADES TÉCNICAS
+                </h2>
+                <div className="space-y-1.5 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Linguagens:</strong> Java, Python, JavaScript/TypeScript</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Backend:</strong> Spring Boot, Node.js, REST API</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Banco de Dados:</strong> PostgreSQL, pgvector</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>DevOps:</strong> Docker</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Segurança:</strong> JWT, bcrypt</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>IA/Automação:</strong> RAG (Retrieval-Augmented Generation), Claude API, OpenAI API, embeddings e busca vetorial, n8n, Evolution API, Prompt Engineering, Scikit-learn, XGBoost, SHAP (interpretabilidade de modelos), ensembling de modelos</p>
+                </div>
               </section>
 
               {/* EXPERIÊNCIA */}
@@ -245,9 +260,9 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Módulo de estoque com geração automática de itens de revisão</li>
-                      <li>Dashboard financeiro com análise automática de PDFs e NF-e, eliminando lançamento manual</li>
-                      <li>Atendimento automatizado via WhatsApp com agentes de IA</li>
+                      <li>Desenvolvimento de módulo de estoque em Java/Spring Boot com geração automática de itens de revisão, integrado a API REST e banco de dados PostgreSQL.</li>
+                      <li>Dashboard financeiro com automação de processos (RPA) para análise automática de PDFs e NF-e, eliminando lançamento manual e reduzindo tempo operacional.</li>
+                      <li>Atendimento automatizado via WhatsApp Business API, com agentes de IA generativa (n8n, Evolution API, Claude API).</li>
                     </ul>
                   </div>
 
@@ -261,10 +276,10 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Responsável técnico pelos processos digitais internos</li>
-                      <li>Automação de atendimento via WhatsApp</li>
-                      <li>Integração de dados entre filiais</li>
-                      <li>Manutenção do sistema de controle de estoque</li>
+                      <li>Responsável técnico pelos processos digitais internos da empresa, atuando como ponto focal de tecnologia.</li>
+                      <li>Desenvolvimento de automação de atendimento via WhatsApp, reduzindo tempo de resposta ao cliente.</li>
+                      <li>Integração de dados entre filiais, garantindo consistência de informações em múltiplos pontos de venda.</li>
+                      <li>Manutenção do sistema de controle de estoque, incluindo ajustes de banco de dados e correção de inconsistências.</li>
                     </ul>
                   </div>
                 </div>
@@ -278,7 +293,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                 <div className="space-y-3">
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Previsão de resultados de futebol com ML (Python) + API Java/Spring Boot</span>
+                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, Python, Scikit-learn, XGBoost — Plataforma de previsão de resultados esportivos com pipeline de Machine Learning</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/Now-or-Never" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
                       github.com/AdrianLopez001/Now-or-Never <ExternalLink size={10} />
@@ -287,7 +302,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Mapa 3D interativo de Natal (MapLibre GL JS), Hackathon do Sol 2026</span>
+                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— JavaScript, MapLibre GL JS, MapTiler, OpenStreetMap — Mapa 3D interativo da cidade de Natal com extrusão de terreno e edificações, desenvolvido durante o Hackathon do Sol 2026 (trilha Turismo). Interface com estética cinematográfica/gamificada para exploração geográfica</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/DunasTech" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
                       github.com/AdrianLopez001/DunasTech <ExternalLink size={10} />
@@ -296,7 +311,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Agendamento de consultas com notificações assíncronas</span>
+                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, REST API — Sistema de agendamento de consultas médicas com notificações assíncronas, arquitetura orientada a eventos para lembretes automáticos e redução de faltas em atendimentos</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/CareSync" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
                       github.com/AdrianLopez001/CareSync <ExternalLink size={10} />
@@ -366,8 +381,23 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                   OBJECTIVE
                 </h2>
                 <p className="leading-relaxed text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Backend Developer with hands-on experience in automation and systems integration (WhatsApp, inventory, financial data), currently working at Cartec Bosch. Deepening knowledge in Spring Boot, PostgreSQL, and JWT.
+                  Backend Developer with Java/Spring Boot, working with REST APIs, systems integration, process automation, relational databases, and applied Artificial Intelligence (Cartec Bosch). Self-taught and results-driven, seeking a remote Backend Developer position to continuously expand technical knowledge and contribute scalable solutions from day one.
                 </p>
+              </section>
+
+              {/* TECHNICAL SKILLS */}
+              <section>
+                <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
+                  TECHNICAL SKILLS
+                </h2>
+                <div className="space-y-1.5 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Languages:</strong> Java, Python, JavaScript/TypeScript</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Backend:</strong> Spring Boot, Node.js, REST API</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Databases:</strong> PostgreSQL, pgvector</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>DevOps:</strong> Docker</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>Security:</strong> JWT, bcrypt</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>AI/Automation:</strong> RAG (Retrieval-Augmented Generation), Claude API, OpenAI API, embeddings and vector search, n8n, Evolution API, Prompt Engineering, Scikit-learn, XGBoost, SHAP (model interpretability), model ensemblings.</p>
+                </div>
               </section>
 
               {/* EXPERIENCE */}
@@ -386,9 +416,9 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Inventory module with automatic generation of basic revision items</li>
-                      <li>Financial dashboard with automatic PDF and invoice (NF-e) analysis, eliminating manual data entry</li>
-                      <li>Automated WhatsApp support powered by AI agents</li>
+                      <li>Developed an inventory module in Java/Spring Boot with automatic generation of revision items, integrated with a REST API and PostgreSQL database.</li>
+                      <li>Built a financial dashboard with process automation (RPA) for automatic analysis of PDFs and Brazilian electronic invoices (NF-e), eliminating manual data entry and reducing operational time.</li>
+                      <li>Implemented automated customer service via WhatsApp Business API, with generative AI agents (n8n, Evolution API, Claude API).</li>
                     </ul>
                   </div>
 
@@ -402,10 +432,9 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Technical owner of internal digital processes</li>
-                      <li>Automated WhatsApp customer support</li>
-                      <li>Data integration across branch locations</li>
-                      <li>Ongoing maintenance of the inventory control system</li>
+                      <li>Served as the technical lead for the company's internal digital processes, acting as the main point of contact for technology.</li>
+                      <li>Developed WhatsApp service automation, reducing customer response time.</li>
+                      <li>Maintained the inventory control system, including database adjustments and inconsistency corrections.</li>
                     </ul>
                   </div>
                 </div>
@@ -419,7 +448,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                 <div className="space-y-3">
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Football match outcome prediction using ML (Python) + Java/Spring Boot API</span>
+                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, Python, Scikit-learn, XGBoost — Sports results prediction platform with a Machine Learning pipeline.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/Now-or-Never" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
                       github.com/AdrianLopez001/Now-or-Never <ExternalLink size={10} />
@@ -428,7 +457,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Interactive 3D map of Natal (MapLibre GL JS), Hackathon do Sol 2026</span>
+                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— JavaScript, MapLibre GL JS, MapTiler, OpenStreetMap — Interactive 3D map of the city of Natal with terrain and building extrusion, built during Hackathon do Sol 2026 (Tourism track). Cinematic/gamified interface for geographic exploration.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/DunasTech" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
                       github.com/AdrianLopez001/DunasTech <ExternalLink size={10} />
@@ -437,7 +466,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Appointment scheduling system with asynchronous notifications</span>
+                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, REST API — Medical appointment scheduling system with asynchronous notifications, event-driven architecture for automatic reminders and reduced no-shows.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/CareSync" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
                       github.com/AdrianLopez001/CareSync <ExternalLink size={10} />
@@ -457,7 +486,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                     <span className="italic text-xs" style={{ color: "var(--text-muted)" }}>(2026–2027, in progress)</span>
                   </div>
                   <div>
-                    <span className="font-bold" style={{ color: "var(--text-primary)" }}>Technical High School Diploma in IT</span> — CE Senador Jesse Pinto Freire{" "}
+                    <span className="font-bold" style={{ color: "var(--text-primary)" }}>Technical Degree in Information Technology</span> — CE Senador Jesse Pinto Freire{" "}
                     <span className="italic text-xs" style={{ color: "var(--text-muted)" }}>(2021–2023)</span>
                   </div>
                 </div>

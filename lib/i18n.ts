@@ -9,7 +9,7 @@ export const translations = {
     // Hero
     "hero.available": "Disponível para oportunidades",
     "hero.role": "Desenvolvedor Backend",
-    "hero.description": "Desenvolvedor Backend com experiência prática em automação e integração de sistemas (WhatsApp, estoque, dados financeiros), atuando atualmente na Cartec Bosch. Aprofundando conhecimentos em Spring Boot, PostgreSQL e JWT.",
+    "hero.description": "Desenvolvedor Backend Java/Spring Boot, atuando com APIs REST, integração de sistemas, automação de processos, bancos de dados relacionais e IA aplicada (Cartec Bosch). Busco posição remota como Desenvolvedor Backend.",
     "hero.viewCv": "Visualizar Currículo",
     "hero.downloadCv": "Baixar Currículo",
     "hero.viewProjects": "Ver Projetos",
@@ -79,7 +79,7 @@ export const translations = {
     // Hero
     "hero.available": "Available for opportunities",
     "hero.role": "Backend Developer",
-    "hero.description": "Backend Developer with hands-on experience in automation and systems integration (WhatsApp, inventory, financial data), currently working at Cartec Bosch. Deepening knowledge in Spring Boot, PostgreSQL, and JWT.",
+    "hero.description": "Backend Developer with Java/Spring Boot, working with REST APIs, systems integration, process automation, relational databases, and applied Artificial Intelligence (Cartec Bosch). Seeking a remote Backend Developer position.",
     "hero.viewCv": "View Resume",
     "hero.downloadCv": "Download Resume",
     "hero.viewProjects": "View Projects",
