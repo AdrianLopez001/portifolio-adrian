@@ -14,13 +14,14 @@ interface CVModalProps {
 export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
   const { locale: appLocale } = useI18n();
   const [activeLang, setActiveLang] = useState<"pt" | "en">(appLocale || "pt");
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
 
-  // Sync modal language with app locale when opened
-  useEffect(() => {
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
     if (isOpen) {
       setActiveLang(appLocale || "pt");
     }
-  }, [isOpen, appLocale]);
+  }
 
   // Handle ESC key to close
   const handleKeyDown = useCallback(
@@ -459,7 +460,7 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Served as the technical lead for the company's internal digital processes, acting as the main point of contact for technology.</li>
+                      <li>Served as the technical lead for the company&apos;s internal digital processes, acting as the main point of contact for technology.</li>
                       <li>Developed WhatsApp service automation, reducing customer response time.</li>
                       <li>Maintained the inventory control system, including database adjustments and inconsistency corrections.</li>
                     </ul>

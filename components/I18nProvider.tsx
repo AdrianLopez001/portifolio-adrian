@@ -41,7 +41,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const t = useCallback(
     (key: TranslationKey): string => {
-      return translations[locale][key] ?? key;
+      const dict = translations[locale] as Record<string, string>;
+      return dict[key] ?? key;
     },
     [locale]
   );

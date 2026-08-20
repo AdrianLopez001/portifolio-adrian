@@ -285,4 +285,4 @@ export const translations = {
   },
 } as const;
 
-export type TranslationKey = string;
+export type TranslationKey = keyof typeof translations.pt;
