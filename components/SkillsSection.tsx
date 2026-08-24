@@ -1,7 +1,7 @@
 "use client";
 
 import { useI18n } from "./I18nProvider";
-import { Server, Code, Database, Bot, Cpu } from "lucide-react";
+import { Server, Database, Bot, Cpu } from "lucide-react";
 
 export default function SkillsSection() {
   const { t } = useI18n();
@@ -12,35 +12,28 @@ export default function SkillsSection() {
       titleKey: "skills.backendTitle" as const,
       descKey: "skills.backendDesc" as const,
       color: "#1a73e8",
-      tags: ["Java 21", "Spring Boot", "Spring Security", "Spring Data JPA", "Python", "FastAPI", "REST APIs"],
-    },
-    {
-      icon: Code,
-      titleKey: "skills.frontendTitle" as const,
-      descKey: "skills.frontendDesc" as const,
-      color: "#3178c6",
-      tags: ["React", "TypeScript", "Next.js 15", "Tailwind CSS v4", "Chart.js", "HTML5/CSS3"],
+      tags: ["Java 21", "Spring Boot", "React", "TypeScript", "Next.js", "HTML5/CSS", "Chart.js", "Python"],
     },
     {
       icon: Database,
       titleKey: "skills.dbTitle" as const,
       descKey: "skills.dbDesc" as const,
       color: "#3572A5",
-      tags: ["PostgreSQL", "pgvector", "H2 Database", "HNSW Indexing", "SQL Optimization"],
+      tags: ["PostgreSQL", "H2", "pgvector"],
     },
     {
       icon: Bot,
       titleKey: "skills.aiTitle" as const,
       descKey: "skills.aiDesc" as const,
       color: "#8b5cf6",
-      tags: ["LLMs", "RAG", "MCP Protocol", "Agentes/Bots", "n8n", "Evolution API", "Claude Vision API"],
+      tags: ["LLMs", "RAG", "MCP", "Agentes/Bots", "n8n", "Evolution API", "Claude Vision API"],
     },
     {
       icon: Cpu,
       titleKey: "skills.infraTitle" as const,
       descKey: "skills.infraDesc" as const,
       color: "#10b981",
-      tags: ["Docker", "AWS (EC2)", "Linux VPS", "Git", "Playwright", "CI/CD"],
+      tags: ["Docker", "AWS (EC2)", "Linux VPS", "Git"],
     },
   ];
 
@@ -59,7 +52,7 @@ export default function SkillsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {skillGroups.map((group) => {
           const Icon = group.icon;
           return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { X, Printer, Download, ExternalLink, Globe } from "lucide-react";
+import { X, Printer, Download, ExternalLink } from "lucide-react";
 import { useI18n } from "./I18nProvider";
 import type { Config } from "@/lib/data";
 
@@ -197,182 +197,178 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
             <div className="max-w-3xl mx-auto space-y-6 text-sm" style={{ color: "var(--text-primary)" }}>
               {/* Header */}
               <div className="border-b pb-5" style={{ borderColor: "var(--border)" }}>
-                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2" style={{ color: "var(--text-primary)" }}>
-                  Adrian Gonçalves Lopes
+                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1" style={{ color: "var(--text-primary)" }}>
+                  ADRIAN LOPES
                 </h1>
+                <p className="text-base font-semibold mb-2" style={{ color: "var(--accent)" }}>
+                  Desenvolvedor Fullstack
+                </p>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs" style={{ color: "var(--text-secondary)" }}>
-                  <span>Natal, RN</span>
-                  <span>•</span>
-                  <span>+55 (84) 98612-6488</span>
+                  <span>Natal, RN, Brasil</span>
                   <span>•</span>
                   <a href="mailto:adrianlopes.dev@gmail.com" className="hover:underline" style={{ color: "var(--accent)" }}>
                     adrianlopes.dev@gmail.com
                   </a>
+                  <span>•</span>
+                  <span>(84) 986126488</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs mt-2" style={{ color: "var(--text-secondary)" }}>
-                  <a href={config.social.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline" style={{ color: "var(--text-primary)" }}>
-                    <ExternalLink size={11} /> github.com/AdrianLopez001
-                  </a>
-                  <span>•</span>
                   <a href={config.social.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline" style={{ color: "var(--text-primary)" }}>
                     <ExternalLink size={11} /> linkedin.com/in/adrian-lopes-a42699371
+                  </a>
+                  <span>•</span>
+                  <a href={config.social.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline" style={{ color: "var(--text-primary)" }}>
+                    <ExternalLink size={11} /> github.com/AdrianLopez001
                   </a>
                 </div>
               </div>
 
-              {/* OBJETIVO */}
+              {/* RESUMO PROFISSIONAL */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  OBJETIVO
+                  RESUMO PROFISSIONAL
                 </h2>
                 <p className="leading-relaxed text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Desenvolvedor Backend Java/Spring Boot, atuando com APIs REST, integração de sistemas, automação de processos, bancos de dados relacionais e Inteligência Artificial aplicada (Cartec Bosch). Autodidata e orientado a resultados, busco posição remota como Desenvolvedor Backend para expandir conhecimento técnico continuamente e contribuir com soluções escaláveis desde o primeiro dia.
+                  Desenvolvedor Fullstack com 2 anos de prática em desenvolvimento de software. Atua na construção de aplicações de ponta a ponta. Experiência prática na criação de ERPs, APIs RESTful, modelagem de bancos relacionais (PostgreSQL) e integração de serviços de IA/automação.
                 </p>
               </section>
 
-              {/* HABILIDADES TÉCNICAS */}
+              {/* SKILLS TÉCNICAS */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  HABILIDADES TÉCNICAS
+                  SKILLS TÉCNICAS
                 </h2>
                 <div className="space-y-1.5 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Linguagens:</strong> Java, Python, JavaScript/TypeScript, SQL</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Backend:</strong> Spring Boot 3.x, REST APIs, Mensageria (RabbitMQ / Spring AMQP), JPA/Hibernate, Node.js</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Banco de Dados:</strong> PostgreSQL, pgvector (HNSW Indexing), H2 Database</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>DevOps & CI/CD:</strong> Docker, Docker Compose, GitHub Actions</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Segurança:</strong> Spring Security 6, JWT (Stateless), BCrypt, Refresh Tokens, CORS & CSRF</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>IA/Automação:</strong> RAG (Retrieval-Augmented Generation), Spring AI, LLMs (OpenAI API, Claude API), Apache Tika, n8n, Evolution API, Scikit-learn, XGBoost, SHAP (interpretabilidade de modelos), Prompt Engineering</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● Linguagens & Frameworks:</strong> Java 21, Spring Boot, React, TypeScript, Next.js, HTML5/CSS, Chart.js, Python</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● Banco de Dados:</strong> PostgreSQL, H2, pgvector</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● IA & Automação:</strong> LLMs, RAG, MCP, Agentes/Bots, n8n, Evolution API, Claude Vision API</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● Infraestrutura & DevOps:</strong> Docker, AWS (EC2), Linux VPS, Git</p>
                 </div>
               </section>
 
-              {/* EXPERIÊNCIA */}
+              {/* EXPERIÊNCIA PROFISSIONAL */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-3 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  EXPERIÊNCIA
+                  EXPERIÊNCIA PROFISSIONAL
                 </h2>
                 <div className="space-y-4">
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-1 mb-1">
                       <span className="font-bold text-base" style={{ color: "var(--text-primary)" }}>
-                        Desenvolvedor Backend — <span style={{ color: "var(--accent)" }}>Cartec Bosch</span>
+                        Core System — <span style={{ color: "var(--accent)" }}>Cofundador & Desenvolvedor Fullstack</span>
                       </span>
-                      <span className="text-xs italic" style={{ color: "var(--text-muted)" }}>
-                        Fev/2026 – Atual
+                      <span className="text-xs italic font-medium" style={{ color: "var(--text-muted)" }}>
+                        2023 – Atual
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Desenvolvimento de módulo de estoque em Java/Spring Boot com geração automática de itens de revisão, integrado a API REST e banco de dados PostgreSQL.</li>
-                      <li>Dashboard financeiro com automação de processos (RPA) para análise automática de PDFs e NF-e, eliminando lançamento manual e reduzindo tempo operacional.</li>
-                      <li>Atendimento automatizado via WhatsApp Business API, com agentes de IA generativa (n8n, Evolution API, Claude API).</li>
+                      <li>Desenvolvimento do Controll-All ERP v2.0 (cliente JC Eventos), cobrindo 11 módulos operacionais.</li>
+                      <li>Construção de APIs REST com Java 21 + Spring Boot e interface web em React/TypeScript.</li>
+                      <li>Definição de requisitos (PRD), arquitetura das rotas e banco de dados, além de elaboração de propostas comerciais.</li>
                     </ul>
                   </div>
 
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-1 mb-1">
                       <span className="font-bold text-base" style={{ color: "var(--text-primary)" }}>
-                        Desenvolvedor Backend — <span style={{ color: "var(--accent)" }}>Loja Rei das Válvulas</span>
+                        Cartec — <span style={{ color: "var(--accent)" }}>Desenvolvedor Fullstack / Sistemas Internos</span>
                       </span>
-                      <span className="text-xs italic" style={{ color: "var(--text-muted)" }}>
-                        Jan/2024 – Fev/2025
+                      <span className="text-xs italic font-medium" style={{ color: "var(--text-muted)" }}>
+                        Atual
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Responsável técnico pelos processos digitais internos da empresa, atuando como ponto focal de tecnologia.</li>
-                      <li>Desenvolvimento de automação de atendimento via WhatsApp, reduzindo tempo de resposta ao cliente.</li>
-                      <li>Integração de dados entre filiais, garantindo consistência de informações em múltiplos pontos de venda.</li>
-                      <li>Manutenção do sistema de controle de estoque, incluindo ajustes de banco de dados e correção de inconsistências.</li>
+                      <li>Otimização de rotinas operacionais através de dashboards dinâmicos (Chart.js) e automação de relatórios PDF, reduzindo gargalos na geração manual de dados.</li>
+                      <li>Estruturação de código backend em Spring Boot e integração com banco de dados relacional.</li>
                     </ul>
                   </div>
                 </div>
               </section>
 
-              {/* PROJETOS */}
+              {/* PROJETOS DE DESTAQUE */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-3 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  PROJETOS
+                  PROJETOS DE DESTAQUE
                 </h2>
                 <div className="space-y-3">
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      Corporate RAG Engine <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java 21, Spring Boot 3.3, Spring AI, pgvector, Apache Tika, OpenAI — Buscador semântico corporativo com RAG, tokenização com overlap e indexação HNSW de alta performance</span>
+                      CARTEC 2.0 <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— ERP/CRM com agentes de IA e análise de imagens (Claude Vision API).</span>
                     </div>
-                    <a href="https://github.com/AdrianLopez001/Corporate-RAG-Engine" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/Corporate-RAG-Engine <ExternalLink size={10} />
-                    </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, Python, Scikit-learn, XGBoost — Plataforma de previsão de resultados esportivos com pipeline de Machine Learning</span>
+                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Análise preditiva de futebol com Spring Boot e Python.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/Now-or-Never" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/Now-or-Never <ExternalLink size={10} />
+                      https://github.com/AdrianLopez001/Now-or-Never <ExternalLink size={10} />
                     </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      Mutirão / System Lumiar <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Next.js 15.5, Tailwind CSS v4, TypeScript, Framer Motion — Plataforma beneficente moderna para conexão de voluntários e instituições com dashboard de impacto</span>
-                    </div>
-                    <a href="https://github.com/AdrianLopez001/System-lumiar" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/System-lumiar <ExternalLink size={10} />
-                    </a>
-                  </div>
-
-                  <div>
-                    <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, PostgreSQL, RabbitMQ, Docker — Sistema de agendamento de consultas médicas com notificações assíncronas e arquitetura orientada a eventos</span>
+                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Gestão de saúde e acompanhamento de pacientes.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/CareSync" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/CareSync <ExternalLink size={10} />
+                      https://github.com/AdrianLopez001/CareSync <ExternalLink size={10} />
                     </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      Spring Security Guide <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java 21, Spring Boot, Spring Security 6, JWT, BCrypt — Guia prático com implementação incremental de autenticação JWT Stateless e Refresh Tokens</span>
+                      Trilha <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Acompanhamento de hábitos com Spring Boot e React.</span>
                     </div>
-                    <a href="https://github.com/AdrianLopez001/SpringSecurity" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/SpringSecurity <ExternalLink size={10} />
+                    <a href="https://github.com/AdrianLopez001/Trilha" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                      https://github.com/AdrianLopez001/Trilha <ExternalLink size={10} />
                     </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— JavaScript, MapLibre GL JS, MapTiler, OpenStreetMap — Mapa 3D interativo da cidade de Natal com extrusão de terreno e edificações (Hackathon do Sol 2026)</span>
+                      Corporate RAG Engine <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Backend RAG com Java 21 e pgvector.</span>
+                    </div>
+                    <a href="https://github.com/AdrianLopez001/Corporate-RAG-Engine" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                      https://github.com/AdrianLopez001/Corporate-RAG-Engine <ExternalLink size={10} />
+                    </a>
+                  </div>
+
+                  <div>
+                    <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
+                      System Lumiar <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Gestão de voluntários e campanhas sociais.</span>
+                    </div>
+                    <a href="https://github.com/AdrianLopez001/System-lumiar" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                      https://github.com/AdrianLopez001/System-lumiar <ExternalLink size={10} />
+                    </a>
+                  </div>
+
+                  <div>
+                    <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
+                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Projeto para o Hackathon do Sol 2026.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/DunasTech" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/DunasTech <ExternalLink size={10} />
+                      https://github.com/AdrianLopez001/DunasTech <ExternalLink size={10} />
                     </a>
                   </div>
                 </div>
               </section>
 
-              {/* FORMAÇÃO */}
+              {/* FORMAÇÃO & CERTIFICAÇÕES */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  FORMAÇÃO
+                  FORMAÇÃO & CERTIFICAÇÕES
                 </h2>
-                <div className="space-y-2 text-xs sm:text-sm">
-                  <div>
-                    <span className="font-bold" style={{ color: "var(--text-primary)" }}>Tecnólogo em ADS</span> — UNINASSAU{" "}
-                    <span className="italic text-xs" style={{ color: "var(--text-muted)" }}>(2026–2027, em andamento)</span>
-                  </div>
-                  <div>
-                    <span className="font-bold" style={{ color: "var(--text-primary)" }}>Técnico em Informática</span> — CE Senador Jesse Pinto Freire{" "}
-                    <span className="italic text-xs" style={{ color: "var(--text-muted)" }}>(2021–2023)</span>
-                  </div>
-                </div>
-              </section>
-
-              {/* IDIOMAS */}
-              <section>
-                <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  IDIOMAS
-                </h2>
-                <p className="text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Português (nativo) &nbsp;•&nbsp; Inglês (intermediário) &nbsp;•&nbsp; Espanhol (básico)
-                </p>
+                <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <li>
+                    <strong style={{ color: "var(--text-primary)" }}>Análise e Desenvolvimento de Sistemas</strong> — UNINASSAU (Cursando 2º Período)
+                  </li>
+                  <li>
+                    <strong style={{ color: "var(--text-primary)" }}>Oracle Java Foundations</strong> (Concluído)
+                  </li>
+                  <li>
+                    <strong style={{ color: "var(--text-primary)" }}>Idiomas:</strong> Português (Nativo) | Inglês (Intermediário)
+                  </li>
+                </ul>
               </section>
             </div>
           ) : (
@@ -380,36 +376,39 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
             <div className="max-w-3xl mx-auto space-y-6 text-sm" style={{ color: "var(--text-primary)" }}>
               {/* Header */}
               <div className="border-b pb-5" style={{ borderColor: "var(--border)" }}>
-                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2" style={{ color: "var(--text-primary)" }}>
-                  Adrian Gonçalves Lopes
+                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1" style={{ color: "var(--text-primary)" }}>
+                  ADRIAN LOPES
                 </h1>
+                <p className="text-base font-semibold mb-2" style={{ color: "var(--accent)" }}>
+                  Fullstack Developer
+                </p>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs" style={{ color: "var(--text-secondary)" }}>
-                  <span>Natal, RN</span>
-                  <span>•</span>
-                  <span>+55 (84) 98612-6488</span>
+                  <span>Natal, RN, Brazil</span>
                   <span>•</span>
                   <a href="mailto:adrianlopes.dev@gmail.com" className="hover:underline" style={{ color: "var(--accent)" }}>
                     adrianlopes.dev@gmail.com
                   </a>
+                  <span>•</span>
+                  <span>+55 (84) 986126488</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs mt-2" style={{ color: "var(--text-secondary)" }}>
-                  <a href={config.social.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline" style={{ color: "var(--text-primary)" }}>
-                    <ExternalLink size={11} /> github.com/AdrianLopez001
-                  </a>
-                  <span>•</span>
                   <a href={config.social.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline" style={{ color: "var(--text-primary)" }}>
                     <ExternalLink size={11} /> linkedin.com/in/adrian-lopes-a42699371
+                  </a>
+                  <span>•</span>
+                  <a href={config.social.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline" style={{ color: "var(--text-primary)" }}>
+                    <ExternalLink size={11} /> github.com/AdrianLopez001
                   </a>
                 </div>
               </div>
 
-              {/* OBJECTIVE */}
+              {/* PROFESSIONAL SUMMARY */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  OBJECTIVE
+                  PROFESSIONAL SUMMARY
                 </h2>
                 <p className="leading-relaxed text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Backend Developer with Java/Spring Boot, working with REST APIs, systems integration, process automation, relational databases, and applied Artificial Intelligence (Cartec Bosch). Self-taught and results-driven, seeking a remote Backend Developer position to continuously expand technical knowledge and contribute scalable solutions from day one.
+                  Fullstack Developer with 2 years of software engineering practice. Specializes in building end-to-end applications, ERPs, RESTful APIs, relational database modeling (PostgreSQL), and AI/automation service integrations.
                 </p>
               </section>
 
@@ -419,142 +418,136 @@ export default function CVModal({ isOpen, onClose, config }: CVModalProps) {
                   TECHNICAL SKILLS
                 </h2>
                 <div className="space-y-1.5 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Languages:</strong> Java, Python, JavaScript/TypeScript, SQL</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Backend:</strong> Spring Boot 3.x, REST APIs, Messaging (RabbitMQ / Spring AMQP), JPA/Hibernate, Node.js</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Databases:</strong> PostgreSQL, pgvector (HNSW Indexing), H2 Database</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>DevOps & CI/CD:</strong> Docker, Docker Compose, GitHub Actions</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>Security:</strong> Spring Security 6, JWT (Stateless), BCrypt, Refresh Tokens, CORS & CSRF</p>
-                  <p><strong style={{ color: "var(--text-primary)" }}>AI/Automation:</strong> RAG (Retrieval-Augmented Generation), Spring AI, LLMs (OpenAI API, Claude API), Apache Tika, n8n, Evolution API, Scikit-learn, XGBoost, SHAP (model interpretability), Prompt Engineering</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● Languages & Frameworks:</strong> Java 21, Spring Boot, React, TypeScript, Next.js, HTML5/CSS, Chart.js, Python</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● Databases:</strong> PostgreSQL, H2, pgvector</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● AI & Automation:</strong> LLMs, RAG, MCP, Agents/Bots, n8n, Evolution API, Claude Vision API</p>
+                  <p><strong style={{ color: "var(--text-primary)" }}>● Infrastructure & DevOps:</strong> Docker, AWS (EC2), Linux VPS, Git</p>
                 </div>
               </section>
 
-              {/* EXPERIENCE */}
+              {/* PROFESSIONAL EXPERIENCE */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-3 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  EXPERIENCE
+                  PROFESSIONAL EXPERIENCE
                 </h2>
                 <div className="space-y-4">
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-1 mb-1">
                       <span className="font-bold text-base" style={{ color: "var(--text-primary)" }}>
-                        Backend Developer — <span style={{ color: "var(--accent)" }}>Cartec Bosch</span>
+                        Core System — <span style={{ color: "var(--accent)" }}>Co-founder & Fullstack Developer</span>
                       </span>
-                      <span className="text-xs italic" style={{ color: "var(--text-muted)" }}>
-                        Feb/2026 – Present
+                      <span className="text-xs italic font-medium" style={{ color: "var(--text-muted)" }}>
+                        2023 – Present
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Developed an inventory module in Java/Spring Boot with automatic generation of revision items, integrated with a REST API and PostgreSQL database.</li>
-                      <li>Built a financial dashboard with process automation (RPA) for automatic analysis of PDFs and Brazilian electronic invoices (NF-e), eliminating manual data entry and reducing operational time.</li>
-                      <li>Implemented automated customer service via WhatsApp Business API, with generative AI agents (n8n, Evolution API, Claude API).</li>
+                      <li>Development of Controll-All ERP v2.0 (client JC Eventos), covering 11 operational modules.</li>
+                      <li>Engineered REST APIs with Java 21 + Spring Boot and web interface in React/TypeScript.</li>
+                      <li>Definition of product requirements (PRD), API route architecture, database modeling, and commercial proposals.</li>
                     </ul>
                   </div>
 
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-1 mb-1">
                       <span className="font-bold text-base" style={{ color: "var(--text-primary)" }}>
-                        Backend Developer — <span style={{ color: "var(--accent)" }}>Loja Rei das Válvulas</span>
+                        Cartec — <span style={{ color: "var(--accent)" }}>Fullstack Developer / Internal Systems</span>
                       </span>
-                      <span className="text-xs italic" style={{ color: "var(--text-muted)" }}>
-                        Jan/2024 – Feb/2025
+                      <span className="text-xs italic font-medium" style={{ color: "var(--text-muted)" }}>
+                        Present
                       </span>
                     </div>
                     <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm pl-1" style={{ color: "var(--text-secondary)" }}>
-                      <li>Served as the technical lead for the company&apos;s internal digital processes, acting as the main point of contact for technology.</li>
-                      <li>Developed WhatsApp service automation, reducing customer response time.</li>
-                      <li>Maintained the inventory control system, including database adjustments and inconsistency corrections.</li>
+                      <li>Optimization of operational routines through dynamic dashboards (Chart.js) and PDF report automation, reducing manual data bottlenecks.</li>
+                      <li>Structuring backend codebase in Spring Boot and integration with relational databases.</li>
                     </ul>
                   </div>
                 </div>
               </section>
 
-              {/* PROJECTS */}
+              {/* FEATURED PROJECTS */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-3 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  PROJECTS
+                  FEATURED PROJECTS
                 </h2>
                 <div className="space-y-3">
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      Corporate RAG Engine <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java 21, Spring Boot 3.3, Spring AI, pgvector, Apache Tika, OpenAI — Corporate semantic search engine using RAG, overlap tokenization, and high-performance HNSW indexing.</span>
+                      CARTEC 2.0 <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— ERP/CRM with AI agents and image analysis (Claude Vision API).</span>
                     </div>
-                    <a href="https://github.com/AdrianLopez001/Corporate-RAG-Engine" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/Corporate-RAG-Engine <ExternalLink size={10} />
-                    </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, Python, Scikit-learn, XGBoost — Sports results prediction platform with a Machine Learning pipeline.</span>
+                      MatchMind AI <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Football predictive analytics with Spring Boot and Python.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/Now-or-Never" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/Now-or-Never <ExternalLink size={10} />
+                      https://github.com/AdrianLopez001/Now-or-Never <ExternalLink size={10} />
                     </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      Mutirão / System Lumiar <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Next.js 15.5, Tailwind CSS v4, TypeScript, Framer Motion — Modern volunteering platform connecting institutions and volunteers with impact dashboards.</span>
-                    </div>
-                    <a href="https://github.com/AdrianLopez001/System-lumiar" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/System-lumiar <ExternalLink size={10} />
-                    </a>
-                  </div>
-
-                  <div>
-                    <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java, Spring Boot, PostgreSQL, RabbitMQ, Docker — Medical appointment scheduling system with asynchronous notifications and event-driven architecture.</span>
+                      CareSync <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Healthcare management and patient monitoring.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/CareSync" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/CareSync <ExternalLink size={10} />
+                      https://github.com/AdrianLopez001/CareSync <ExternalLink size={10} />
                     </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      Spring Security Guide <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Java 21, Spring Boot, Spring Security 6, JWT, BCrypt — Practical study guide and step-by-step implementation of JWT Stateless authentication and Refresh Tokens.</span>
+                      Trilha <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Habit tracking with Spring Boot and React.</span>
                     </div>
-                    <a href="https://github.com/AdrianLopez001/SpringSecurity" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/SpringSecurity <ExternalLink size={10} />
+                    <a href="https://github.com/AdrianLopez001/Trilha" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                      https://github.com/AdrianLopez001/Trilha <ExternalLink size={10} />
                     </a>
                   </div>
 
                   <div>
                     <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
-                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— JavaScript, MapLibre GL JS, MapTiler, OpenStreetMap — Interactive 3D map of Natal/RN with terrain and building extrusion (Hackathon do Sol 2026).</span>
+                      Corporate RAG Engine <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Enterprise RAG backend with Java 21 and pgvector.</span>
+                    </div>
+                    <a href="https://github.com/AdrianLopez001/Corporate-RAG-Engine" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                      https://github.com/AdrianLopez001/Corporate-RAG-Engine <ExternalLink size={10} />
+                    </a>
+                  </div>
+
+                  <div>
+                    <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
+                      System Lumiar <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Volunteer management and social campaigns.</span>
+                    </div>
+                    <a href="https://github.com/AdrianLopez001/System-lumiar" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                      https://github.com/AdrianLopez001/System-lumiar <ExternalLink size={10} />
+                    </a>
+                  </div>
+
+                  <div>
+                    <div className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
+                      DunasTech <span className="font-normal" style={{ color: "var(--text-secondary)" }}>— Project built for Hackathon do Sol 2026.</span>
                     </div>
                     <a href="https://github.com/AdrianLopez001/DunasTech" target="_blank" rel="noopener noreferrer" className="text-xs hover:underline inline-flex items-center gap-1" style={{ color: "var(--accent)" }}>
-                      github.com/AdrianLopez001/DunasTech <ExternalLink size={10} />
+                      https://github.com/AdrianLopez001/DunasTech <ExternalLink size={10} />
                     </a>
                   </div>
                 </div>
               </section>
 
-              {/* EDUCATION */}
+              {/* EDUCATION & CERTIFICATIONS */}
               <section>
                 <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  EDUCATION
+                  EDUCATION & CERTIFICATIONS
                 </h2>
-                <div className="space-y-2 text-xs sm:text-sm">
-                  <div>
-                    <span className="font-bold" style={{ color: "var(--text-primary)" }}>Associate Degree in Systems Analysis and Development</span> — UNINASSAU{" "}
-                    <span className="italic text-xs" style={{ color: "var(--text-muted)" }}>(2026–2027, in progress)</span>
-                  </div>
-                  <div>
-                    <span className="font-bold" style={{ color: "var(--text-primary)" }}>Technical Degree in Information Technology</span> — CE Senador Jesse Pinto Freire{" "}
-                    <span className="italic text-xs" style={{ color: "var(--text-muted)" }}>(2021–2023)</span>
-                  </div>
-                </div>
-              </section>
-
-              {/* LANGUAGES */}
-              <section>
-                <h2 className="text-xs font-bold uppercase tracking-wider mb-2 pb-1 border-b" style={{ color: "var(--accent)", borderColor: "var(--border)" }}>
-                  LANGUAGES
-                </h2>
-                <p className="text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Portuguese (native) &nbsp;•&nbsp; English (intermediate) &nbsp;•&nbsp; Spanish (basic)
-                </p>
+                <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <li>
+                    <strong style={{ color: "var(--text-primary)" }}>Systems Analysis and Development</strong> — UNINASSAU (In Progress — 2nd Semester)
+                  </li>
+                  <li>
+                    <strong style={{ color: "var(--text-primary)" }}>Oracle Java Foundations</strong> (Completed)
+                  </li>
+                  <li>
+                    <strong style={{ color: "var(--text-primary)" }}>Languages:</strong> Portuguese (Native) | English (Intermediate)
+                  </li>
+                </ul>
               </section>
             </div>
           )}
